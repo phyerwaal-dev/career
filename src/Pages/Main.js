@@ -30,7 +30,7 @@ function Main() {
                     {''}branch suit you?
                 </h3>
                 <p align="center">
-                    <Button className = "sweep-right">LET US HELP</Button>
+                    <Button className="sweep-right">LET US HELP</Button>
                 </p>
             </div>
         </section>

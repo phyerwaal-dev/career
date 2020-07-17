@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Hacked;
+    src: url(https://hackedfont.com/HACKED.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Hacked;
+}
+
+#dev-section {
+    height: 100vh;
+    background-image: url("../pattern.png");
+    background-size: contain;
+    overflow-x: hidden;
+}
+
+img {
+    width: 25%;
+    height: 25%;
+}
+
+.header {
+    font-size: 50px;
+    padding: 4%;
+}
+
+.dev-details {
+    padding: 3% 2%;
+}
+
+@media only screen and (max-width: 700) {
+    img {
+        width: 50%;
+        height: 50%;
+    }
+}
