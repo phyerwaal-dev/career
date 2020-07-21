@@ -1,12 +1,8 @@
-@font-face {
-    font-family: Hacked;
-    src: url(https://hackedfont.com/HACKED.ttf);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: Hacked;
+    font-family: 'Varela Round', sans-serif;
 }
 
 #dev-section {
@@ -27,7 +23,17 @@ img {
 }
 
 .dev-details {
-    padding: 3% 2%;
+    padding: 3%;
+}
+
+.dev {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.name {
+    font-size: 30px !important;
+    font-weight: bolder !important;
 }
 
 @media only screen and (max-width: 700) {

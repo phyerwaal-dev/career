@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#questions {
+    font-family: 'Varela Round', sans-serif;
+}
+
+#questions .view {
+    min-height: 100vh !important;
+    height: unset !important;
+}
+
+#questions .card {
+    margin-top: 20px;
+    border-color: transparent !important;
+}
+
+.send-btn {
+    margin: 10px auto 50px auto;
+}
