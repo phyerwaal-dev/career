@@ -82,7 +82,7 @@ class Questions extends React.Component {
                                     return (
                                         <div className="card">
                                             <MDBCardBody>
-                                                <MDBCardTitle>Q{index + 1} {question.question}</MDBCardTitle>
+                                                <MDBCardTitle>Q{index + 1}. {question.question}</MDBCardTitle>
                                             </MDBCardBody>
                                             <hr></hr>
                                         </div>
