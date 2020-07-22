@@ -92,7 +92,7 @@ class CallToActionIntro extends React.Component {
                                 <h4 className='pt-md-1 pt-sm-2 pt-1 pb-md-3 pb-sm-3 pb-3'>
                                     Confusion is <strong>Temperary</strong>, Interest is <strong>Permanent</strong>
                                 </h4>
-                                <MDBBtn color="success" href="/questions">Let Us Help</MDBBtn>
+                                <MDBBtn color="success" href="/career/questions">Let Us Help</MDBBtn>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
