@@ -14,6 +14,7 @@ import {
     MDBView,
     MDBContainer,
     MDBFooter,
+    MDBLink,
 } from 'mdbreact';
 import '../home.css';
 import logo from '../Web_bg.png';
@@ -92,7 +93,9 @@ class CallToActionIntro extends React.Component {
                                 <h4 className='pt-md-1 pt-sm-2 pt-1 pb-md-3 pb-sm-3 pb-3'>
                                     Confusion is <strong>Temperary</strong>, Interest is <strong>Permanent</strong>
                                 </h4>
-                                <MDBBtn color="success" to="/career/questions">Let Us Help</MDBBtn>
+                                <MDBLink to="/career/questions">
+                                    <MDBBtn color="success">Let Us Help</MDBBtn>
+                                </MDBLink>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
