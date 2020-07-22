@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/career/static/css/main.7ec892e7.chunk.css",
+    "main.js": "/career/static/js/main.ce457924.chunk.js",
+    "main.js.map": "/career/static/js/main.ce457924.chunk.js.map",
+    "runtime-main.js": "/career/static/js/runtime-main.d9448256.js",
+    "runtime-main.js.map": "/career/static/js/runtime-main.d9448256.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/career/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.e0f21af7.chunk.js": "/career/static/js/2.e0f21af7.chunk.js",
+    "static/js/2.e0f21af7.chunk.js.map": "/career/static/js/2.e0f21af7.chunk.js.map",
+    "index.html": "/career/index.html",
+    "precache-manifest.84287d05e2ead08feaf43702b1d82118.js": "/career/precache-manifest.84287d05e2ead08feaf43702b1d82118.js",
+    "service-worker.js": "/career/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/career/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.7ec892e7.chunk.css.map": "/career/static/css/main.7ec892e7.chunk.css.map",
+    "static/js/2.e0f21af7.chunk.js.LICENSE.txt": "/career/static/js/2.e0f21af7.chunk.js.LICENSE.txt",
+    "static/media/Web_bg.png": "/career/static/media/Web_bg.f2e4e6ab.png",
+    "static/media/dev.css": "/career/static/media/pattern.0044911d.png",
+    "static/media/phyerwaal_dev_logo_final.png": "/career/static/media/phyerwaal_dev_logo_final.fad90657.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d9448256.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.e0f21af7.chunk.js",
+    "static/css/main.7ec892e7.chunk.css",
+    "static/js/main.ce457924.chunk.js"
+  ]
+}
