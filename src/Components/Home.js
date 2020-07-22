@@ -68,10 +68,10 @@ class CallToActionIntro extends React.Component {
                             <MDBCollapse isOpen={collapsed} navbar>
                                 <MDBNavbarNav right>
                                     <MDBNavItem active>
-                                        <MDBNavLink to='#!'>About Us</MDBNavLink>
+                                        <MDBNavLink to='/career/'>Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to='/career/dev'>Developers</MDBNavLink>
+                                        <MDBNavLink to='/career/questions'>Developers</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
