@@ -71,7 +71,7 @@ class CallToActionIntro extends React.Component {
                                         <MDBNavLink to='/career/'>Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to='/career/questions'>Developers</MDBNavLink>
+                                        <MDBNavLink to='/career/dev'>Developers</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
