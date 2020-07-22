@@ -43,7 +43,7 @@ class Questions extends React.Component {
         );
         return (
             <div id="questions">
-                <div>
+                <div className="fadeInDown">
                     <MDBNavbar
                         color='secondary-color'
                         style={navStyle}
@@ -76,11 +76,11 @@ class Questions extends React.Component {
                         style={{ height: '100%', width: '100%', paddingTop: '5rem' }}
                         className='d-flex justify-content-center align-items-center'>
                         <MDBRow>
-                            <h1 className="display-10 font-weight-bold">QUESTIONS</h1>
+                            <h1 className="display-10 font-weight-bold fadeInDown" style={{ animationDelay: '.2s' }}>QUESTIONS</h1>
                             <MDBCard style={{ width: "100%" }}>
                                 {questions.map((question, index) => {
                                     return (
-                                        <div className="card">
+                                        <div className="card fadeInDown" style={{ animationDelay: '.4s' }}>
                                             <MDBCardBody>
                                                 <MDBCardTitle>Q{index + 1}. {question.question}</MDBCardTitle>
                                             </MDBCardBody>
@@ -89,7 +89,7 @@ class Questions extends React.Component {
                                     );
                                 })}
                             </MDBCard>
-                            <div className="send-btn">
+                            <div className="send-btn fadeInDown" style={{ animationDelay: '1s' }}>
                                 <MDBBtn color="success" >SEND ANSWER</MDBBtn>
                             </div>
                         </MDBRow>
