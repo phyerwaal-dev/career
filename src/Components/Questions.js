@@ -53,17 +53,17 @@ class Questions extends React.Component {
                         transparent
                     >
                         <MDBContainer>
-                            <MDBNavbarBrand href="/">
+                            <MDBNavbarBrand href="/career/">
                                 <strong>APSIT Career</strong>
                             </MDBNavbarBrand>
                             <MDBNavbarToggler onClick={this.handleTogglerClick} />
                             <MDBCollapse isOpen={collapsed} navbar>
                                 <MDBNavbarNav right>
-                                    <MDBNavItem active>
-                                        <MDBNavLink to='#!'>About Us</MDBNavLink>
+                                    <MDBNavItem>
+                                        <MDBNavLink to='/career/'>Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to='/dev'>Developers</MDBNavLink>
+                                        <MDBNavLink to='/career/dev'>Developers</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
