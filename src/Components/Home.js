@@ -85,7 +85,7 @@ class CallToActionIntro extends React.Component {
                         className='d-flex justify-content-center align-items-center'
                     >
                         <MDBRow>
-                            <MDBCol md='12' className='mb-4 text-center'>
+                            <MDBCol sm='4' md='12' className='mb-4 text-center'>
                                 <h1 className='display-4 font-weight-bold mb-0 pt-md-5 pt-5'>
                                     Find Your Interested Branch
                                 </h1>
