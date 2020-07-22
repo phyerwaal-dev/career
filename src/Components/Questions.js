@@ -92,7 +92,6 @@ class Questions extends React.Component {
                             <div className="send-btn">
                                 <MDBBtn color="success" >SEND ANSWER</MDBBtn>
                             </div>
-
                         </MDBRow>
                     </MDBContainer>
                 </MDBView>

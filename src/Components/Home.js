@@ -61,7 +61,7 @@ class CallToActionIntro extends React.Component {
                         transparent
                     >
                         <MDBContainer>
-                            <MDBNavbarBrand href="/">
+                            <MDBNavbarBrand href="/career">
                                 <strong>APSIT Career</strong>
                             </MDBNavbarBrand>
                             <MDBNavbarToggler onClick={this.handleTogglerClick} />
@@ -71,7 +71,7 @@ class CallToActionIntro extends React.Component {
                                         <MDBNavLink to='#!'>About Us</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to='/dev'>Developers</MDBNavLink>
+                                        <MDBNavLink to='/career/dev'>Developers</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
