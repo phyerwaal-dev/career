@@ -25,6 +25,16 @@
     margin: 10px auto 50px auto;
 }
 
+.question-header {
+    padding-left: 20px;
+}
+
+.form-control {
+    height: 15px !important;
+}
+
+/* Animation */
+
 .fadeInDown {
     animation-name: fadeInDown;
     animation-duration: 1s;
