@@ -116,7 +116,7 @@ class Questions extends React.Component {
                     >
                         <MDBRow>
                             <h1
-                                className="display-10 font-weight-bold question-header"
+                                className="display-10 font-weight-bold question-header fadeInDown" style={{ animationDelay: ".2s" }}
                             >
                                 QUESTIONS
               </h1>
