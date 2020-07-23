@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardTitle, MDBRow, MDBView, MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavItem, MDBNavLink } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBRow, MDBView, MDBContainer, MDBNavbar, MDBNavbarBrand, MDBNavbarToggler, MDBCollapse, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBInput, MDBCol } from 'mdbreact';
 import '../question.css'
 import questions from '../data/questions.json';
 import logo from '../Web_bg.png';
@@ -7,7 +7,7 @@ import logo from '../Web_bg.png';
 class Questions extends React.Component {
     state = {
         collapsed: false,
-        radio: 0
+        radio: false
     };
 
     handleTogglerClick = () => {
@@ -17,9 +17,9 @@ class Questions extends React.Component {
         });
     };
 
-    onClick = (nr) => () => {
+    onClick = () => {
         this.setState({
-            radio: nr
+            radio: !this.state.radio
         });
     }
 
@@ -81,9 +81,11 @@ class Questions extends React.Component {
                                 {questions.map((question, index) => {
                                     return (
                                         <div className="card fadeInDown" style={{ animationDelay: '.4s' }}>
-                                            <MDBCardBody>
+                                            <h4>Q{index + 1}. {question.question}</h4>
+                                            {/* <MDBCardBody>
                                                 <MDBCardTitle>Q{index + 1}. {question.question}</MDBCardTitle>
-                                            </MDBCardBody>
+                                            </MDBCardBody> */}
+                                            {/* <MDBInput onClick={this.onClick} checked={this.state.radio} label="Strongly Agree" type="radio" id="option1" size="xs" /> */}
                                             <hr></hr>
                                         </div>
                                     );

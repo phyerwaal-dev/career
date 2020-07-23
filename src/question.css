@@ -41,18 +41,3 @@
         transform: translateY(0px);
     }
 }
-
-.fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
