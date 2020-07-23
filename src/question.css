@@ -33,6 +33,11 @@
     height: 15px !important;
 }
 
+.form-control:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
+
 /* Animation */
 
 .fadeInDown {

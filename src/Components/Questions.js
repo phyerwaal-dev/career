@@ -145,8 +145,8 @@ class Questions extends React.Component {
                                                                         ? true
                                                                         : false
                                                                 }
-                                                                label={opt.opt}
                                                                 type="radio"
+                                                                label={opt.opt}
                                                             />
                                                         </MDBContainer>
                                                     );
