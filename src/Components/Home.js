@@ -90,7 +90,7 @@ class CallToActionIntro extends React.Component {
                                     Find Your Interested Branch
                                 </h1>
                                 <h4 className='pt-md-1 pt-sm-2 pt-1 pb-md-3 pb-sm-3 pb-3 fadeInDown' style={{ animationDelay: '.7s' }}>
-                                    Confusion is <strong>Temperary</strong>, Interest is <strong>Permanent</strong>
+                                    Confusion is <strong className="highlight">Temperary</strong>, Interest is <strong className="highlight">Permanent</strong>
                                 </h4>
                                 <MDBLink to="/career/questions">
                                     <MDBBtn color="success" className="fadeInDown" style={{ animationDelay: '1s' }}>Let Us Help</MDBBtn>
