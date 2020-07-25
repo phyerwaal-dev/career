@@ -16,7 +16,7 @@ import {
     MDBLink,
 } from 'mdbreact';
 import '../home.css';
-import logo from '../Web_bg.png';
+import bg from '../Web_bg.png';
 
 class CallToActionIntro extends React.Component {
     state = {
@@ -79,7 +79,7 @@ class CallToActionIntro extends React.Component {
                     </MDBNavbar>
                     {collapsed && overlay}
                 </div>
-                <MDBView src={logo}>
+                <MDBView src={bg}>
                     <MDBContainer
                         style={{ height: '100%', width: '100%', paddingTop: '12rem' }}
                         className='d-flex justify-content-center align-items-center'

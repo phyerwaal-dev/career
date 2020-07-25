@@ -24,6 +24,7 @@ import logo from "../Web_bg.png";
 class Questions extends React.Component {
     state = {
         collapsed: false,
+        msg: "",
         selection: questions.map((i, key) => {
             let data = { id: i.id, val: null };
             return data;
@@ -44,12 +45,6 @@ class Questions extends React.Component {
     };
 
     componentDidMount() {
-        // questions.map((i, key) => {
-        //   let data = { id: i.id, val: null };
-        //   this.setState((prevState) => ({
-        //     selection: [...prevState.selection, data],
-        //   }));
-        // });
         document.querySelector("nav").style.height = "65px";
     }
 
@@ -68,6 +63,21 @@ class Questions extends React.Component {
         });
         await this.setState({ selection: new_selection });
     };
+
+    validate = () => {
+        // console.log(this.state.selection);
+        for (var i = 0; i <= this.state.selection.length - 1; i++) {
+            if (this.state.selection[i].val != null) {
+                console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
+                this.setState({ msg: "" });
+            }
+            else {
+                console.log(" Value is Null for " + i);
+                console.log(this.state.selection);
+                this.setState({ msg: "Please fill all the questions." });
+            }
+        }
+    }
 
     render() {
         const { collapsed } = this.state;
@@ -135,6 +145,7 @@ class Questions extends React.Component {
                                                     return (
                                                         <MDBContainer className="mt-3">
                                                             <MDBInput
+                                                                required
                                                                 id={question.id}
                                                                 onClick={this.onChoose.bind(
                                                                     question.id,
@@ -161,7 +172,9 @@ class Questions extends React.Component {
                                 className="send-btn fadeInDown"
                                 style={{ animationDelay: "1s" }}
                             >
-                                <MDBBtn color="success">SEND ANSWER</MDBBtn>
+                                <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
+                                <MDBBtn color="success" onClick={this.validate}>SEND ANSWER</MDBBtn>
+
                             </div>
                         </MDBRow>
                     </MDBContainer>

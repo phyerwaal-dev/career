@@ -38,6 +38,13 @@
     box-shadow: none !important;
 }
 
+.error-msg {
+    color: red;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+}
+
 /* Animation */
 
 .fadeInDown {
