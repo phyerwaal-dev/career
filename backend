@@ -1,0 +1,44 @@
+import pandas as pd
+from google.colab import files
+data_to_load = files.upload()
+
+import io
+df = pd.read_csv(io.BytesIO(data_to_load['data_new_full.csv']))
+
+df
+
+le = preprocessing.LabelEncoder()
+a=df.columns
+for i in range(4,len(a)):
+  df[a[i]]=le.fit_transform(df[a[i]])
+  
+df[a[3]]=le.fit_transform(df[a[3]])
+df
+
+features=[]
+for i in range(4,len(a)):
+  features.append(a[i])
+df[features]
+
+user=df[df['Username']=='sj6674684@gmail.com']
+user
+new_user=user.drop(['Timestamp','Username','MOODLE ID','Branch'], axis=1)
+# new_user = df.iloc[0,2:]
+print(new_user)
+
+#KNN
+from sklearn.neighbors import KNeighborsClassifier
+neigh = KNeighborsClassifier(n_neighbors=4)
+neigh.fit(df[features], df['Branch'])
+print(neigh.score(df[features], df['Branch'], sample_weight=None))
+print(neigh.predict(new_user))
+
+#SVC(MAIN)
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
+clf = make_pipeline(StandardScaler(), SVC(gamma='auto',max_iter=1000,probability=True))
+clf.fit(df[features], df['Branch'])
+print(clf.predict(new_user))
+print(clf.score(df[features], df['Branch']))
+print(clf.predict_proba(new_user))
