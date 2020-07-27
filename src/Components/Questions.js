@@ -16,6 +16,7 @@ import {
     MDBNavLink,
     MDBInput,
 } from "mdbreact";
+import axios from 'axios';
 import "../question.css";
 import questions from "../data/questions.json";
 import options from "../data/options.json";
@@ -25,6 +26,7 @@ class Questions extends React.Component {
     state = {
         collapsed: false,
         msg: "",
+        error: 0,
         selection: questions.map((i, key) => {
             let data = { id: i.id, val: null };
             return data;
@@ -64,19 +66,32 @@ class Questions extends React.Component {
         await this.setState({ selection: new_selection });
     };
 
-    validate = () => {
-        // console.log(this.state.selection);
+    validate = async () => {
+        await this.setState({
+            error: 0,
+            msg: ""
+        })
         for (var i = 0; i <= this.state.selection.length - 1; i++) {
             if (this.state.selection[i].val != null) {
                 console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
-                this.setState({ msg: "" });
+                await this.setState({ msg: "" });
             }
             else {
                 console.log(" Value is Null for " + i);
                 console.log(this.state.selection);
-                this.setState({ msg: "Please fill all the questions." });
+                await this.setState({ msg: "Please fill all the questions." });
+                await this.setState({ error: this.state.error + 1 });
             }
         }
+        // if (this.state.error == 0) {
+        //     await axios.post("URL", {
+        //         postQuestions: this.state.selection
+        //     }).then(function (response) {
+        //         console.log(response);
+        //     }).catch(function (error) {
+        //         console.log(error);
+        //     });
+        // }
     }
 
     render() {
@@ -173,7 +188,7 @@ class Questions extends React.Component {
                                 style={{ animationDelay: "1s" }}
                             >
                                 <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
-                                <MDBBtn color="success" onClick={this.validate}>SEND ANSWER</MDBBtn>
+                                <MDBBtn color="success" href="/career/results">SEND ANSWER</MDBBtn>
 
                             </div>
                         </MDBRow>
