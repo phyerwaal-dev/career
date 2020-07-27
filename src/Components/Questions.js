@@ -15,6 +15,7 @@ import {
     MDBNavItem,
     MDBNavLink,
     MDBInput,
+    MDBLink,
 } from "mdbreact";
 import axios from 'axios';
 import "../question.css";
@@ -188,7 +189,8 @@ class Questions extends React.Component {
                                 style={{ animationDelay: "1s" }}
                             >
                                 <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
-                                <MDBBtn color="success" href="/career/results">SEND ANSWER</MDBBtn>
+                                <MDBBtn color="success">
+                                    <MDBLink to="/career/results">SEND ANSWER</MDBLink></MDBBtn>
 
                             </div>
                         </MDBRow>
