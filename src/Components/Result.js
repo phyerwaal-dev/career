@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import { Row, Col } from "reactstrap";
+import { Col } from "reactstrap";
 import '../CSS/results.css';
 
 class Result extends Component {

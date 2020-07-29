@@ -22,6 +22,7 @@ import "../question.css";
 import questions from "../data/questions.json";
 import options from "../data/options.json";
 import logo from "../Web_bg.png";
+import { connect } from 'react-redux';
 
 class Questions extends React.Component {
     state = {
@@ -29,7 +30,7 @@ class Questions extends React.Component {
         msg: "",
         error: 0,
         selection: questions.map((i, key) => {
-            let data = { id: i.id, val: null };
+            let data = { id: i.id, question: i.question, val: null, select: null };
             return data;
         }),
     };
@@ -56,17 +57,20 @@ class Questions extends React.Component {
     }
 
     onChoose = async (val, e) => {
-        let data = { id: parseInt(e.target.id), val: val };
+        // console.log(this.state.selection);
+        let data = { id: parseInt(e.target.id), val: val, question: this.state.selection[parseInt(e.target.id) - 1].question, select: options[val].opt };
+        // console.log(data);
         var new_selection = [];
 
         await this.state.selection.map((i, key) => {
             i.id == data.id
                 ? new_selection.push(data)
-                : new_selection.push({ id: i.id, val: i.val });
+                : new_selection.push({ id: i.id, val: i.val, question: i.question, select: i.select });
         });
         await this.setState({ selection: new_selection });
     };
 
+    //Validate questions
     validate = async () => {
         await this.setState({
             error: 0,
@@ -160,12 +164,13 @@ class Questions extends React.Component {
                                                 {options.map((opt, oindex) => {
                                                     return (
                                                         <MDBContainer className="mt-3">
-                                                            <MDBInput
+                                                            <MDBInput key={oindex}
                                                                 required
                                                                 id={question.id}
                                                                 onClick={this.onChoose.bind(
                                                                     question.id,
-                                                                    opt.val
+
+                                                                    opt.val,
                                                                 )}
                                                                 checked={
                                                                     this.state.selection[index].val === opt.val
@@ -189,8 +194,7 @@ class Questions extends React.Component {
                                 style={{ animationDelay: "1s" }}
                             >
                                 <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
-                                <MDBBtn color="success">
-                                    <MDBLink to="/career/results">SEND ANSWER</MDBLink></MDBBtn>
+                                <MDBBtn color="success" onClick={() => console.log(this.state.selection)}>SEND ANSWER</MDBBtn>
 
                             </div>
                         </MDBRow>
@@ -201,4 +205,10 @@ class Questions extends React.Component {
     }
 }
 
-export default Questions;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        storeResponse: (response) => { dispatch({ type: 'RES_SUCCESS', response: response }) }
+    }
+}
+
+export default connect(mapDispatchToProps)(Questions);

@@ -122,5 +122,81 @@
     {
         "id": "31",
         "question": "Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models"
+    },
+    {
+        "id": "32",
+        "question": "Develop a way to better predict the weather with some technology."
+    },
+    {
+        "id": "33",
+        "question": "Enter information into a computer database."
+    },
+    {
+        "id": "34",
+        "question": "Do you like writing computer programs for various purposes?"
+    },
+    {
+        "id": "35",
+        "question": "Want to hack/breach into a computer system."
+    },
+    {
+        "id": "36",
+        "question": "Like solving complex math problems."
+    },
+    {
+        "id": "37",
+        "question": "Fascinated about computer processors and GPUs."
+    },
+    {
+        "id": "38",
+        "question": "Try to solve an application error or computer booting error by yourself."
+    },
+    {
+        "id": "39",
+        "question": "Are you interested to know the working of virtual assistant (like google assistant/Alexa)?"
+    },
+    {
+        "id": "40",
+        "question": "Work on new computer operating system."
+    },
+    {
+        "id": "41",
+        "question": "Develop a machine learning algorithm."
+    },
+    {
+        "id": "42",
+        "question": "Design antennas for wireless communication."
+    },
+    {
+        "id": "43",
+        "question": "Design electronic control systems for electric vehicles."
+    },
+    {
+        "id": "44",
+        "question": "Design an automated home lighting system"
+    },
+    {
+        "id": "45",
+        "question": "Knowledge of machines and tools, including their designs, uses, repair, and maintenance."
+    },
+    {
+        "id": "46",
+        "question": "Installing equipment, machines, wiring meet specifications."
+    },
+    {
+        "id": "47",
+        "question": "Design and build sports cars chassis, engine etc."
+    },
+    {
+        "id": "48",
+        "question": "Trying to provide better water quality/supply to the villages where there is shortage of water."
+    },
+    {
+        "id": "49",
+        "question": "Trying to find the materials used to develop a road/bridge/railway-track."
+    },
+    {
+        "id": "50",
+        "question": "Finding better water irrigation methods."
     }
 ]
