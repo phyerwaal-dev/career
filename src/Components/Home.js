@@ -18,7 +18,7 @@ import {
 import '../home.css';
 import bg from '../Web_bg.png';
 
-class CallToActionIntro extends React.Component {
+class Home extends React.Component {
     state = {
         collapsed: false
     };
@@ -111,4 +111,4 @@ class CallToActionIntro extends React.Component {
     }
 }
 
-export default CallToActionIntro;
+export default Home;

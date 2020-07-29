@@ -56,6 +56,7 @@ class Questions extends React.Component {
         document.querySelector("nav").style.height = "auto";
     }
 
+    //Set Answers
     onChoose = async (val, e) => {
         // console.log(this.state.selection);
         let data = { id: parseInt(e.target.id), val: val, question: this.state.selection[parseInt(e.target.id) - 1].question, select: options[val].opt };
@@ -89,10 +90,11 @@ class Questions extends React.Component {
             }
         }
         // if (this.state.error == 0) {
-        //     await axios.post("URL", {
+        //     axios.post("URL", {
         //         postQuestions: this.state.selection
         //     }).then(function (response) {
-        //         storeResponse(response);
+        //         storeResponse(response.body);
+        //         history.push('/career/results');
         //     }).catch(function (error) {
         //         console.log(error);
         //     });
@@ -205,6 +207,7 @@ class Questions extends React.Component {
     }
 }
 
+//Dispatch Data to store state
 const mapDispatchToProps = (dispatch) => {
     return {
         storeResponse: (response) => { dispatch({ type: 'RES_SUCCESS', response: response }) }
