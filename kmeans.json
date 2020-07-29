@@ -1,0 +1,42 @@
+[
+    {
+        "cluster": 0,
+        "IT": 119,
+        "Computers": 89,
+        "Mechanical": 113,
+        "Civil": 91,
+        "EXTC": 122
+    },
+    {
+        "cluster": 1,
+        "IT": 125,
+        "Computers": 107,
+        "Mechanical": 116,
+        "Civil": 60,
+        "EXTC": 72
+    },
+    {
+        "cluster": 2,
+        "IT": 93,
+        "Computers": 99,
+        "Mechanical": 128,
+        "Civil": 86,
+        "EXTC": 81
+    },
+    {
+        "cluster": 3,
+        "IT": 61,
+        "Computers": 29,
+        "Mechanical": 54,
+        "Civil": 37,
+        "EXTC": 31
+    },
+    {
+        "cluster": 4,
+        "IT": 60,
+        "Computers": 72,
+        "Mechanical": 85,
+        "Civil": 67,
+        "EXTC": 66
+    }
+]
