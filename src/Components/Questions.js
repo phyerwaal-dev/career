@@ -89,16 +89,17 @@ class Questions extends React.Component {
                 await this.setState({ error: this.state.error + 1 });
             }
         }
-        // if (this.state.error == 0) {
-        //     axios.post("URL", {
-        //         postQuestions: this.state.selection
-        //     }).then(function (response) {
-        //         storeResponse(response.body);
-        //         history.push('/career/results');
-        //     }).catch(function (error) {
-        //         console.log(error);
-        //     });
-        // }
+        if (this.state.error == 0) {
+            axios.post('https://phyerwaal-dev-career.herokuapp.com/submit-data', {
+                data: this.state.selection
+            }).then(function (response) {
+                console.log(response.data);
+                // storeResponse(response.body);
+                // history.push('/career/results');
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
     }
 
     render() {
@@ -196,7 +197,7 @@ class Questions extends React.Component {
                                 style={{ animationDelay: "1s" }}
                             >
                                 <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
-                                <MDBBtn color="success" onClick={() => console.log(this.state.selection)}>SEND ANSWER</MDBBtn>
+                                <MDBBtn color="success" onClick={this.validate}>SEND ANSWER</MDBBtn>
 
                             </div>
                         </MDBRow>
