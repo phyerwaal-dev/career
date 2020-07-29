@@ -1,12 +1,13 @@
 const initState = {
-    response: []
+    res: []
 }
 
 const rootReducer = (state = initState, action) => {
     if (action.type == 'RES_SUCCESS') {
+        let resp = action.response;
         return {
             ...state,
-            response: response
+            res: resp,
         }
     }
     return state
