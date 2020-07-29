@@ -92,7 +92,7 @@ class Questions extends React.Component {
         //     await axios.post("URL", {
         //         postQuestions: this.state.selection
         //     }).then(function (response) {
-        //         console.log(response);
+        //         storeResponse(response);
         //     }).catch(function (error) {
         //         console.log(error);
         //     });
