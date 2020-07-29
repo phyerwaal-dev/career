@@ -25,15 +25,24 @@ import logo from "../Web_bg.png";
 import { connect } from 'react-redux';
 
 class Questions extends React.Component {
-    state = {
-        collapsed: false,
-        msg: "",
-        error: 0,
-        selection: questions.map((i, key) => {
-            let data = { id: i.id, question: i.question, val: null, select: null };
-            return data;
-        }),
-    };
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading: false,
+            collapsed: false,
+            msg: "",
+            error: 0,
+            selection: questions.map((i, key) => {
+                let data = { id: i.id, question: i.question, val: null, select: null };
+                return data;
+            }),
+        };
+    }
+
+
+
 
     handleTogglerClick = () => {
         const { collapsed } = this.state;
@@ -73,18 +82,19 @@ class Questions extends React.Component {
 
     //Validate questions
     validate = async () => {
+        await this.props.setLoading();
         await this.setState({
             error: 0,
             msg: ""
         })
         for (var i = 0; i <= this.state.selection.length - 1; i++) {
             if (this.state.selection[i].val != null) {
-                console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
+                // console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
                 await this.setState({ msg: "" });
             }
             else {
-                console.log(" Value is Null for " + i);
-                console.log(this.state.selection);
+                // console.log(" Value is Null for " + i);
+                // console.log(this.state.selection);
                 await this.setState({ msg: "Please fill all the questions." });
                 await this.setState({ error: this.state.error + 1 });
             }
@@ -92,12 +102,14 @@ class Questions extends React.Component {
         if (this.state.error == 0) {
             axios.post('https://phyerwaal-dev-career.herokuapp.com/submit-data', {
                 data: this.state.selection
-            }).then(function (response) {
-                console.log(response.data);
-                // storeResponse(response.body);
-                // history.push('/career/results');
+            }).then((response) => {
+                // console.log(response.data);
+                // console.log("This :" + this);
+                this.props.storeResponse(response.data);
+                console.log(this.props.loading);
+                this.props.history.push('/career/results');
             }).catch(function (error) {
-                console.log(error);
+                //console.log(error);
             });
         }
     }
@@ -199,6 +211,7 @@ class Questions extends React.Component {
                                 <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
                                 <MDBBtn color="success" onClick={this.validate}>SEND ANSWER</MDBBtn>
 
+
                             </div>
                         </MDBRow>
                     </MDBContainer>
@@ -211,8 +224,13 @@ class Questions extends React.Component {
 //Dispatch Data to store state
 const mapDispatchToProps = (dispatch) => {
     return {
-        storeResponse: (response) => { dispatch({ type: 'RES_SUCCESS', response: response }) }
+        storeResponse: (response) => { dispatch({ type: 'RES_SUCCESS', response: response }) },
+        setLoading: () => { dispatch({ type: 'SET_LOADING' }) }
     }
 }
 
-export default connect(mapDispatchToProps)(Questions);
+const mapStateToTProps = (state) => ({
+    loading: state.loading
+})
+
+export default connect(mapStateToTProps, mapDispatchToProps)(Questions);

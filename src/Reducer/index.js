@@ -20,19 +20,37 @@ const initState = {
     series: [
         {
             name: "Possibilities",
-            data: [100, 40, 45, 50, 49]
+            data: []
         },
     ],
+    loading: false
 };
 
 const rootReducer = (state = initState, action) => {
     if (action.type == 'RES_SUCCESS') {
-        state.series.data = action.response["probabilities"];
+        // console.log("Action : ", action.response.probabilities.map((prob, index) => {
+        //     return prob * 100
+        // }));
+        let probab = action.response.probabilities.map((prob, index) => {
+            return Math.round(prob * 100)
+        });
         // let resp = action.response;
-        // return {
-        //     ...state,
-        //     data: resp,
-        // }
+        return {
+            ...state,
+            series: [{
+                name: "Probability % ",
+                data: probab,
+            }],
+            loading: false
+        }
+    }
+
+    if (action.type == 'SET_LOADING') {
+        let loading = state.loading;
+        return {
+            ...state,
+            loading: true
+        }
     }
     return state
 }

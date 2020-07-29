@@ -4,10 +4,9 @@ import { Col } from "reactstrap";
 import { connect } from 'react-redux';
 import '../CSS/results.css';
 
-const Result = ({ options, res, series }) => {
+const Result = ({ options, series }) => {
     const [result, setResult] = useState();
-    console.log(options);
-    console.log(series);
+    // console.log(options);
     return (
         <div className="app" align="center">
             <Col className="justify-content-center align-items-center">
@@ -15,12 +14,16 @@ const Result = ({ options, res, series }) => {
             </Col>
             <Col>
                 <div className="mixed-chart">
-                    <Chart
-                        options={options}
-                        series={series}
-                        type="bar"
-                        width="500"
-                    />
+                    {series ?
+                        <Chart
+                            options={options}
+                            series={series}
+                            type="bar"
+                            width="500"
+                        />
+                        : null
+                    }
+
                 </div>
             </Col>
         </div>
@@ -30,7 +33,7 @@ const Result = ({ options, res, series }) => {
 const mapStateToProps = (state) => ({
     // res: state.res,
     options: state.options,
-    series: state.series
+    series: state.series,
 });
 
 export default connect(mapStateToProps)(Result);
