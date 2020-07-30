@@ -3,6 +3,7 @@ import Chart from "react-apexcharts";
 import { Col } from "reactstrap";
 import { connect } from 'react-redux';
 import '../CSS/results.css';
+import { MDBLink, MDBBtn } from "mdbreact";
 
 const Result = ({ options, series }) => {
     const [result, setResult] = useState();
@@ -25,6 +26,11 @@ const Result = ({ options, series }) => {
                     }
 
                 </div>
+                <p align="center">In the above graph, the probability has been calculated according to your answers.</p>
+                <p align='center'>Please check all the probabilities.</p>
+                <MDBLink to='/career/'>
+                    <MDBBtn color="success">HOME</MDBBtn>
+                </MDBLink>
             </Col>
         </div>
     );
