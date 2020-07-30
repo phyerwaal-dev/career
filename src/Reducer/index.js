@@ -23,7 +23,6 @@ const initState = {
             data: []
         },
     ],
-    loading: false
 };
 
 const rootReducer = (state = initState, action) => {
@@ -41,15 +40,6 @@ const rootReducer = (state = initState, action) => {
                 name: "Probability % ",
                 data: probab,
             }],
-            loading: false
-        }
-    }
-
-    if (action.type == 'SET_LOADING') {
-        let loading = state.loading;
-        return {
-            ...state,
-            loading: true
         }
     }
     return state

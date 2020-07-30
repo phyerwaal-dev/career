@@ -15,7 +15,6 @@ import {
     MDBNavItem,
     MDBNavLink,
     MDBInput,
-    MDBLink,
 } from "mdbreact";
 import axios from 'axios';
 import "../question.css";
@@ -73,7 +72,7 @@ class Questions extends React.Component {
         var new_selection = [];
 
         await this.state.selection.map((i, key) => {
-            i.id == data.id
+            i.id === data.id
                 ? new_selection.push(data)
                 : new_selection.push({ id: i.id, val: i.val, question: i.question, select: i.select });
         });
@@ -82,31 +81,32 @@ class Questions extends React.Component {
 
     //Validate questions
     validate = async () => {
-        await this.props.setLoading();
         await this.setState({
             error: 0,
             msg: ""
         })
         for (var i = 0; i <= this.state.selection.length - 1; i++) {
-            if (this.state.selection[i].val != null) {
+            if (this.state.selection[i].val === null) {
                 // console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
-                await this.setState({ msg: "" });
-            }
-            else {
-                // console.log(" Value is Null for " + i);
-                // console.log(this.state.selection);
+                // await this.setState({ msg: "" });
                 await this.setState({ msg: "Please fill all the questions." });
                 await this.setState({ error: this.state.error + 1 });
             }
+            // else {
+            //     // console.log(" Value is Null for " + i);
+            //     // console.log(this.state.selection);
+            //     // await this.setState({ msg: "Please fill all the questions." });
+            //     // await this.setState({ error: this.state.error + 1 });
+            // }
         }
-        if (this.state.error == 0) {
+        console.log("Error: " + this.state.error);
+        if (this.state.error === 0) {
             axios.post('https://phyerwaal-dev-career.herokuapp.com/submit-data', {
                 data: this.state.selection
             }).then((response) => {
                 // console.log(response.data);
                 // console.log("This :" + this);
                 this.props.storeResponse(response.data);
-                console.log(this.props.loading);
                 this.props.history.push('/career/results');
             }).catch(function (error) {
                 //console.log(error);
@@ -225,12 +225,8 @@ class Questions extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         storeResponse: (response) => { dispatch({ type: 'RES_SUCCESS', response: response }) },
-        setLoading: () => { dispatch({ type: 'SET_LOADING' }) }
     }
 }
 
-const mapStateToTProps = (state) => ({
-    loading: state.loading
-})
 
-export default connect(mapStateToTProps, mapDispatchToProps)(Questions);
+export default connect(null, mapDispatchToProps)(Questions);
