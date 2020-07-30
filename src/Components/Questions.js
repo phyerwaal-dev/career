@@ -90,15 +90,15 @@ class Questions extends React.Component {
             if (this.state.selection[i].val == null) {
                 // console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
                 // await this.setState({ msg: "" });
-                await this.setState({ msg: "Please fill all the questions." });
-                await this.setState({ error: this.state.error + 1 });
+                this.setState({ msg: "Please fill all the questions." });
+                this.setState({ error: this.state.error + 1 });
             }
-            else {
-                // console.log(" Value is Null for " + i);
-                // console.log(this.state.selection);
-                // await this.setState({ msg: "Please fill all the questions." });
-                // await this.setState({ error: this.state.error + 1 });
-            }
+            // else {
+            //     console.log(" Value is Null for " + i);
+            //     console.log(this.state.selection);
+            //     await this.setState({ msg: "Please fill all the questions." });
+            //     await this.setState({ error: this.state.error + 1 });
+            // }
         }
         console.log("Error: " + this.state.error);
         if (this.state.error == 0) {
