@@ -45,6 +45,14 @@
     text-align: center;
 }
 
+.form-check-input {
+    left: -45% !important;
+}
+
+.form-check-label {
+    margin-left: 5% !important;
+}
+
 /* Animation */
 
 .fadeInDown {

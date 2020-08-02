@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from 'react-bootstrap';
 import {
     MDBBtn,
     MDBCard,
@@ -182,6 +183,8 @@ class Questions extends React.Component {
                                                         <MDBContainer className="mt-3">
                                                             <MDBInput key={oindex}
                                                                 required
+                                                                type="radio"
+                                                                label={opt.opt}
                                                                 id={question.id}
                                                                 onClick={this.onChoose.bind(
                                                                     question.id,
@@ -193,8 +196,6 @@ class Questions extends React.Component {
                                                                         ? true
                                                                         : false
                                                                 }
-                                                                type="radio"
-                                                                label={opt.opt}
                                                             />
                                                         </MDBContainer>
                                                     );
