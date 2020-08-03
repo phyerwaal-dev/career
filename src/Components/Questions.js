@@ -73,13 +73,9 @@ class Questions extends React.Component {
       temp,
       index;
 
-    // While there are elements in the array
     while (ctr > 0) {
-      // Pick a random index
       index = Math.floor(Math.random() * ctr);
-      // Decrease ctr by 1
       ctr--;
-      // And swap the last element with it
       temp = arra1[ctr];
       arra1[ctr] = arra1[index];
       arra1[index] = temp;
@@ -87,10 +83,7 @@ class Questions extends React.Component {
     return arra1;
   }
 
-  //Set Answers
   onChoose = async (id, x, val) => {
-    // console.log(this.state.selection);
-
     console.log(id, x, val);
     let data = {
       id: parseInt(id),
@@ -125,25 +118,10 @@ class Questions extends React.Component {
     var err = 0;
     for (var i = 0; i <= this.state.selection.length - 1; i++) {
       if (this.state.selection[i].val == null) {
-        // console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
-        // await this.setState({ msg: "" });
-        // this.setState({ msg: "Please fill all the questions." });
-        // this.setState({ error: this.state.error + 1 });
         err = err + 1;
       }
-      // else {
-      //     console.log(" Value is Null for " + i);
-      //     console.log(this.state.selection);
-      //     await this.setState({ msg: "Please fill all the questions." });
-      //     await this.setState({ error: this.state.error + 1 });
-      // }
     }
-    // if
-    // console.log(
-    //   this.state.selection.sort(function (a, b) {
-    //     return a.id - b.id;
-    //   })
-    // );
+
     if (err > 0)
       this.setState({
         error: err,
@@ -158,13 +136,11 @@ class Questions extends React.Component {
           }),
         })
         .then((response) => {
-          // console.log(response.data);
-          // console.log("This :" + this);
           this.props.storeResponse(response.data);
           this.props.history.push("/career/results");
         })
         .catch(function (error) {
-          //console.log(error);
+          console.log(err);
         });
     }
   };
@@ -300,10 +276,6 @@ class Questions extends React.Component {
                     next
                   </MDBBtn>
                 )}
-
-                {/* <MDBBtn color='success' onClick={this.validate}>
-                  SEND ANSWER
-                </MDBBtn> */}
               </div>
             </MDBRow>
           </MDBContainer>
