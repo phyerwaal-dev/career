@@ -1,202 +1,202 @@
 [
-    {
-        "id": "1",
-        "question": "Write logic to Make bank transactions automated"
-    },
-    {
-        "id": "2",
-        "question": "Develop Games / Software"
-    },
-    {
-        "id": "3",
-        "question": "To know how the internet works, build websites"
-    },
-    {
-        "id": "4",
-        "question": "Develop, Load and manage computer software over a large computer network"
-    },
-    {
-        "id": "5",
-        "question": "Compute and record statistical and other numerical data,to find out a suitable solution"
-    },
-    {
-        "id": "6",
-        "question": "Maintain/develop cloud infrastructure like AWS, GCP"
-    },
-    {
-        "id": "7",
-        "question": "Build an  operating system like Windows, MacOS, Android, iOS"
-    },
-    {
-        "id": "8",
-        "question": "Build motherboards for various systems"
-    },
-    {
-        "id": "9",
-        "question": "Identify objects from images using machine learning"
-    },
-    {
-        "id": "10",
-        "question": "Writing computer programs for various purposes"
-    },
-    {
-        "id": "11",
-        "question": "Develop satellite communication systems"
-    },
-    {
-        "id": "12",
-        "question": "Design electronic control systems for vehicles, airplanes, ships, rockets"
-    },
-    {
-        "id": "13",
-        "question": "Learn about circuit boards, processors, chips, electronic system design"
-    },
-    {
-        "id": "14",
-        "question": "Design robotic control units"
-    },
-    {
-        "id": "15",
-        "question": "Design electronic home automation systems"
-    },
-    {
-        "id": "16",
-        "question": "Understand how the mobile and other telecommunication devices works"
-    },
-    {
-        "id": "17",
-        "question": "Develop power supply tools and equipment"
-    },
-    {
-        "id": "18",
-        "question": "Make a self driving car, Build robotic parts"
-    },
-    {
-        "id": "19",
-        "question": "Repair/create machines, Create a mechanism to reduce water pollution from industry"
-    },
-    {
-        "id": "20",
-        "question": "Assemble/build Products in a manufacturing unit"
-    },
-    {
-        "id": "21",
-        "question": "Create an exoskeleton to increase strength, (like iron man)"
-    },
-    {
-        "id": "22",
-        "question": "Build a remote controlled plane / quadcopter / car"
-    },
-    {
-        "id": "23",
-        "question": "Build a rocket engines for interstellar travel like elon musk"
-    },
-    {
-        "id": "24",
-        "question": "Develop machinery to make tasks easier, or automate them"
-    },
-    {
-        "id": "25",
-        "question": "Visualize plans for an open space.(E.g. being able to imagine how a room will look if the furniture is rearranged)"
-    },
-    {
-        "id": "26",
-        "question": "Try to visualize architectural structure by looking at any building/bridges/roads etc."
-    },
-    {
-        "id": "27",
-        "question": "Determine efficient plans/methods for water management and conservation, Finding better water irrigation methods"
-    },
-    {
-        "id": "28",
-        "question": "Finding ways to keep development in process with least deforestation"
-    },
-    {
-        "id": "29",
-        "question": "To research a new ways for making roads more durable"
-    },
-    {
-        "id": "30",
-        "question": "Gain Knowledge of materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads"
-    },
-    {
-        "id": "31",
-        "question": "Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models"
-    },
-    {
-        "id": "32",
-        "question": "Develop a way to better predict the weather with some technology."
-    },
-    {
-        "id": "33",
-        "question": "Enter information into a computer database."
-    },
-    {
-        "id": "34",
-        "question": "Do you like writing computer programs for various purposes?"
-    },
-    {
-        "id": "35",
-        "question": "Want to hack/breach into a computer system."
-    },
-    {
-        "id": "36",
-        "question": "Like solving complex math problems."
-    },
-    {
-        "id": "37",
-        "question": "Fascinated about computer processors and GPUs."
-    },
-    {
-        "id": "38",
-        "question": "Try to solve an application error or computer booting error by yourself."
-    },
-    {
-        "id": "39",
-        "question": "Are you interested to know the working of virtual assistant (like google assistant/Alexa)?"
-    },
-    {
-        "id": "40",
-        "question": "Work on new computer operating system."
-    },
-    {
-        "id": "41",
-        "question": "Develop a machine learning algorithm."
-    },
-    {
-        "id": "42",
-        "question": "Design antennas for wireless communication."
-    },
-    {
-        "id": "43",
-        "question": "Design electronic control systems for electric vehicles."
-    },
-    {
-        "id": "44",
-        "question": "Design an automated home lighting system"
-    },
-    {
-        "id": "45",
-        "question": "Knowledge of machines and tools, including their designs, uses, repair, and maintenance."
-    },
-    {
-        "id": "46",
-        "question": "Installing equipment, machines, wiring meet specifications."
-    },
-    {
-        "id": "47",
-        "question": "Design and build sports cars chassis, engine etc."
-    },
-    {
-        "id": "48",
-        "question": "Trying to provide better water quality/supply to the villages where there is shortage of water."
-    },
-    {
-        "id": "49",
-        "question": "Trying to find the materials used to develop a road/bridge/railway-track."
-    },
-    {
-        "id": "50",
-        "question": "Finding better water irrigation methods."
-    }
+  {
+    "id": 1,
+    "question": "Write logic to Make bank transactions automated"
+  },
+  {
+    "id": 2,
+    "question": "Develop Games / Software"
+  },
+  {
+    "id": 3,
+    "question": "To know how the internet works, build websites"
+  },
+  {
+    "id": 4,
+    "question": "Develop, Load and manage computer software over a large computer network"
+  },
+  {
+    "id": 5,
+    "question": "Compute and record statistical and other numerical data,to find out a suitable solution"
+  },
+  {
+    "id": 6,
+    "question": "Maintain/develop cloud infrastructure like AWS, GCP"
+  },
+  {
+    "id": 7,
+    "question": "Build an  operating system like Windows, MacOS, Android, iOS"
+  },
+  {
+    "id": 8,
+    "question": "Build motherboards for various systems"
+  },
+  {
+    "id": 9,
+    "question": "Identify objects from images using machine learning"
+  },
+  {
+    "id": 10,
+    "question": "Writing computer programs for various purposes"
+  },
+  {
+    "id": 11,
+    "question": "Develop satellite communication systems"
+  },
+  {
+    "id": 12,
+    "question": "Design electronic control systems for vehicles, airplanes, ships, rockets"
+  },
+  {
+    "id": 13,
+    "question": "Learn about circuit boards, processors, chips, electronic system design"
+  },
+  {
+    "id": 14,
+    "question": "Design robotic control units"
+  },
+  {
+    "id": 15,
+    "question": "Design electronic home automation systems"
+  },
+  {
+    "id": 16,
+    "question": "Understand how the mobile and other telecommunication devices works"
+  },
+  {
+    "id": 17,
+    "question": "Develop power supply tools and equipment"
+  },
+  {
+    "id": 18,
+    "question": "Make a self driving car, Build robotic parts"
+  },
+  {
+    "id": 19,
+    "question": "Repair/create machines, Create a mechanism to reduce water pollution from industry"
+  },
+  {
+    "id": 20,
+    "question": "Assemble/build Products in a manufacturing unit"
+  },
+  {
+    "id": 21,
+    "question": "Create an exoskeleton to increase strength, (like iron man)"
+  },
+  {
+    "id": 22,
+    "question": "Build a remote controlled plane / quadcopter / car"
+  },
+  {
+    "id": 23,
+    "question": "Build a rocket engines for interstellar travel like elon musk"
+  },
+  {
+    "id": 24,
+    "question": "Develop machinery to make tasks easier, or automate them"
+  },
+  {
+    "id": 25,
+    "question": "Visualize plans for an open space.(E.g. being able to imagine how a room will look if the furniture is rearranged)"
+  },
+  {
+    "id": 26,
+    "question": "Try to visualize architectural structure by looking at any building/bridges/roads etc."
+  },
+  {
+    "id": 27,
+    "question": "Determine efficient plans/methods for water management and conservation, Finding better water irrigation methods"
+  },
+  {
+    "id": 28,
+    "question": "Finding ways to keep development in process with least deforestation"
+  },
+  {
+    "id": 29,
+    "question": "To research a new ways for making roads more durable"
+  },
+  {
+    "id": 30,
+    "question": "Gain Knowledge of materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads"
+  },
+  {
+    "id": 31,
+    "question": "Knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models"
+  },
+  {
+    "id": 32,
+    "question": "Develop a way to better predict the weather with some technology."
+  },
+  {
+    "id": 33,
+    "question": "Enter information into a computer database."
+  },
+  {
+    "id": 34,
+    "question": "Do you like writing computer programs for various purposes?"
+  },
+  {
+    "id": 35,
+    "question": "Want to hack/breach into a computer system."
+  },
+  {
+    "id": 36,
+    "question": "Like solving complex math problems."
+  },
+  {
+    "id": 37,
+    "question": "Fascinated about computer processors and GPUs."
+  },
+  {
+    "id": 38,
+    "question": "Try to solve an application error or computer booting error by yourself."
+  },
+  {
+    "id": 39,
+    "question": "Are you interested to know the working of virtual assistant (like google assistant/Alexa)?"
+  },
+  {
+    "id": 40,
+    "question": "Work on new computer operating system."
+  },
+  {
+    "id": 41,
+    "question": "Develop a machine learning algorithm."
+  },
+  {
+    "id": 42,
+    "question": "Design antennas for wireless communication."
+  },
+  {
+    "id": 43,
+    "question": "Design electronic control systems for electric vehicles."
+  },
+  {
+    "id": 44,
+    "question": "Design an automated home lighting system"
+  },
+  {
+    "id": 45,
+    "question": "Knowledge of machines and tools, including their designs, uses, repair, and maintenance."
+  },
+  {
+    "id": 46,
+    "question": "Installing equipment, machines, wiring meet specifications."
+  },
+  {
+    "id": 47,
+    "question": "Design and build sports cars chassis, engine etc."
+  },
+  {
+    "id": 48,
+    "question": "Trying to provide better water quality/supply to the villages where there is shortage of water."
+  },
+  {
+    "id": 49,
+    "question": "Trying to find the materials used to develop a road/bridge/railway-track."
+  },
+  {
+    "id": 50,
+    "question": "Finding better water irrigation methods."
+  }
 ]
