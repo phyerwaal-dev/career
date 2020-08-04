@@ -41,6 +41,7 @@ class UserDetails extends React.Component {
             email: this.state.email
         }]
         await this.props.userData(add);
+        this.props.history.push("/career/questions");
         console.log("From Redux : ", this.props.user);
     }
 

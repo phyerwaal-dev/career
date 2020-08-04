@@ -1,5 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
+import { Form } from "react-bootstrap";
 import {
     MDBBtn,
     MDBCard,
@@ -16,26 +16,7 @@ import {
     MDBNavItem,
     MDBNavLink,
     MDBInput,
-=======
-import { Form } from "react-bootstrap";
-import {
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBRow,
-  MDBView,
-  MDBContainer,
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBNavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBInput,
-  MDBLink,
->>>>>>> ba242af79e5d39bb8d44f4aeb3cce70f78105bc9
+    MDBLink,
 } from "mdbreact";
 import axios from "axios";
 import "../question.css";
@@ -298,6 +279,7 @@ class Questions extends React.Component {
                                         <MDBBtn
                                             color='success'
                                             onClick={async () => {
+
                                                 await this.setState({
                                                     current: Array.from(this.state.current, (x) => x + 5),
                                                 });
@@ -328,11 +310,11 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Questions);
-return {
-    storeResponse: (response) => {
-        dispatch({ type: "RES_SUCCESS", response: response });
-    },
-};
+// export default connect(mapStateToProps, mapDispatchToProps)(Questions);
+// return {
+//     storeResponse: (response) => {
+//         dispatch({ type: "RES_SUCCESS", response: response });
+//     },
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Questions);
