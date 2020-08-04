@@ -109,15 +109,14 @@ class Questions extends React.Component {
     console.log(this.state.selection);
   };
 
-  //Validate questions
-  validate = async () => {
+  nextValidate = async () => {
     await this.setState({
       error: 0,
       msg: "",
     });
     var err = 0;
-    for (var i = 0; i <= this.state.selection.length - 1; i++) {
-      if (this.state.selection[i].val == null) {
+    for (var i = 0; i <= this.state.current.length - 1; i++) {
+      if (this.state.selection[this.state.current[i]].val == null) {
         err = err + 1;
       }
     }
@@ -127,6 +126,32 @@ class Questions extends React.Component {
         error: err,
         msg: "Please fill all the questions.",
       });
+    else
+      this.setState({
+        error: 0,
+        msg: "",
+      });
+  };
+
+  //Validate questions
+  validate = async () => {
+    // await this.setState({
+    //   error: 0,
+    //   msg: "",
+    // });
+    // var err = 0;
+    // for (var i = 0; i <= this.state.selection.length - 1; i++) {
+    //   if (this.state.selection[i].val == null) {
+    //     err = err + 1;
+    //   }
+    // }
+
+    // if (err > 0)
+    //   this.setState({
+    //     error: err,
+    //     msg: "Please fill all the questions.",
+    //   });
+    await this.nextValidate();
     console.log("Error: " + this.state.error);
     if (this.state.error == 0) {
       axios
@@ -140,7 +165,7 @@ class Questions extends React.Component {
           this.props.history.push("/career/results");
         })
         .catch(function (error) {
-          console.log(err);
+          console.log(error);
         });
     }
   };
@@ -251,6 +276,7 @@ class Questions extends React.Component {
                     color='success'
                     onClick={() => {
                       this.setState({
+                        msg: "",
                         current: Array.from(this.state.current, (x) => x - 5),
                       });
                     }}
@@ -267,9 +293,11 @@ class Questions extends React.Component {
                   <MDBBtn
                     color='success'
                     onClick={async () => {
-                      await this.setState({
-                        current: Array.from(this.state.current, (x) => x + 5),
-                      });
+                      await this.nextValidate();
+                      if (this.state.error == 0)
+                        await this.setState({
+                          current: Array.from(this.state.current, (x) => x + 5),
+                        });
                       console.log(this.state.current);
                     }}
                   >
