@@ -25,17 +25,6 @@ import options from "../data/options.json";
 import logo from "../Web_bg.png";
 import { connect } from "react-redux";
 
-// function shuffleArray(array) {
-//     let i = array.length - 1;
-//     for (; i > 0; i--) {
-//         const j = Math.floor(Math.random() * (i + 1));
-//         const temp = array[i];
-//         array[i] = array[j];
-//         array[j] = temp;
-//     }
-//     return array;
-// }
-
 class Questions extends React.Component {
     constructor(props) {
         super(props);
@@ -120,15 +109,14 @@ class Questions extends React.Component {
         console.log(this.state.selection);
     };
 
-    //Validate questions
-    validate = async () => {
+    nextValidate = async () => {
         await this.setState({
             error: 0,
             msg: "",
         });
         var err = 0;
-        for (var i = 0; i <= this.state.selection.length - 1; i++) {
-            if (this.state.selection[i].val == null) {
+        for (var i = 0; i <= this.state.current.length - 1; i++) {
+            if (this.state.selection[this.state.current[i]].val == null) {
                 err = err + 1;
             }
         }
@@ -138,6 +126,32 @@ class Questions extends React.Component {
                 error: err,
                 msg: "Please fill all the questions.",
             });
+        else
+            this.setState({
+                error: 0,
+                msg: "",
+            });
+    };
+
+    //Validate questions
+    validate = async () => {
+        // await this.setState({
+        //   error: 0,
+        //   msg: "",
+        // });
+        // var err = 0;
+        // for (var i = 0; i <= this.state.selection.length - 1; i++) {
+        //   if (this.state.selection[i].val == null) {
+        //     err = err + 1;
+        //   }
+        // }
+
+        // if (err > 0)
+        //   this.setState({
+        //     error: err,
+        //     msg: "Please fill all the questions.",
+        //   });
+        await this.nextValidate();
         console.log("Error: " + this.state.error);
         if (this.state.error == 0) {
             axios
@@ -145,14 +159,13 @@ class Questions extends React.Component {
                     data: this.state.selection.sort(function (a, b) {
                         return a.id - b.id;
                     }),
-                    userData: this.props.user
                 })
                 .then((response) => {
                     this.props.storeResponse(response.data);
                     this.props.history.push("/career/results");
                 })
                 .catch(function (error) {
-                    console.log(err);
+                    console.log(error);
                 });
         }
     };
@@ -263,6 +276,7 @@ class Questions extends React.Component {
                                         color='success'
                                         onClick={() => {
                                             this.setState({
+                                                msg: "",
                                                 current: Array.from(this.state.current, (x) => x - 5),
                                             });
                                         }}
@@ -279,10 +293,11 @@ class Questions extends React.Component {
                                         <MDBBtn
                                             color='success'
                                             onClick={async () => {
-
-                                                await this.setState({
-                                                    current: Array.from(this.state.current, (x) => x + 5),
-                                                });
+                                                await this.nextValidate();
+                                                if (this.state.error == 0)
+                                                    await this.setState({
+                                                        current: Array.from(this.state.current, (x) => x + 5),
+                                                    });
                                                 console.log(this.state.current);
                                             }}
                                         >
@@ -301,20 +316,10 @@ class Questions extends React.Component {
 //Dispatch Data to store state
 const mapDispatchToProps = (dispatch) => {
     return {
-        storeResponse: (response) => { dispatch({ type: 'RES_SUCCESS', response: response }) },
-    }
-}
+        storeResponse: (response) => {
+            dispatch({ type: "RES_SUCCESS", response: response });
+        },
+    };
+};
 
-const mapStateToProps = (state) => ({
-    user: state.user
-});
-
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Questions);
-// return {
-//     storeResponse: (response) => {
-//         dispatch({ type: "RES_SUCCESS", response: response });
-//     },
-// };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Questions);
+export default connect(null, mapDispatchToProps)(Questions);
