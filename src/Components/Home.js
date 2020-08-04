@@ -50,7 +50,7 @@ class Home extends React.Component {
         );
         return (
             <div id='caltoaction'>
-                <div className="fadeInDown">
+                <div>
                     <MDBNavbar
                         color='secondary-color'
                         style={navStyle}
@@ -92,7 +92,7 @@ class Home extends React.Component {
                                 <h4 className='pt-md-1 pt-sm-2 pt-1 pb-md-3 pb-sm-3 pb-3 fadeInDown' style={{ animationDelay: '.7s' }}>
                                     Confusion is <strong className="highlight">Temporary</strong>, Interest is <strong className="highlight">Permanent</strong>
                                 </h4>
-                                <MDBLink to="/career/questions">
+                                <MDBLink to="/career/add_details">
                                     <MDBBtn color="success" className="fadeInDown" style={{ animationDelay: '1s' }}>Let Us Help</MDBBtn>
                                 </MDBLink>
                             </MDBCol>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+#userDetails {
+    font-family: 'Varela Round', sans-serif;
+    background-image: url("../Web_bg.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.form-control {
+    padding: 15px !important;
+}
+
+.header-title {
+    padding-top: 5rem;
+    padding-bottom: 20px;
+    color: #00c851;
+}
+
+/* Animation */
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
