@@ -1,6 +1,5 @@
 {
   "name": "career_guidance",
-  "homepage": "https://career.vercel.app/career",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
