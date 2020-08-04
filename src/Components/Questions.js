@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import {
     MDBBtn,
     MDBCard,
@@ -15,13 +16,33 @@ import {
     MDBNavItem,
     MDBNavLink,
     MDBInput,
+=======
+import { Form } from "react-bootstrap";
+import {
+  MDBBtn,
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBRow,
+  MDBView,
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBInput,
+  MDBLink,
+>>>>>>> ba242af79e5d39bb8d44f4aeb3cce70f78105bc9
 } from "mdbreact";
-import axios from 'axios';
+import axios from "axios";
 import "../question.css";
 import questions from "../data/questions.json";
 import options from "../data/options.json";
 import logo from "../Web_bg.png";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 // function shuffleArray(array) {
 //     let i = array.length - 1;
@@ -35,11 +56,11 @@ import { connect } from 'react-redux';
 // }
 
 class Questions extends React.Component {
-
     constructor(props) {
         super(props);
 
         this.state = {
+            current: [0, 1, 2, 3, 4],
             loading: false,
             collapsed: false,
             msg: "",
@@ -50,9 +71,6 @@ class Questions extends React.Component {
             }),
         };
     }
-
-
-
 
     handleTogglerClick = () => {
         const { collapsed } = this.state;
@@ -66,105 +84,130 @@ class Questions extends React.Component {
             radio: nr,
         });
     };
+    componentWillMount() {
+        var xxx = this.shuffle(this.state.selection);
+        console.log(xxx);
+        this.setState({ selection: xxx });
+    }
 
     componentDidMount() {
         document.querySelector("nav").style.height = "65px";
     }
 
-    // componentWillMount() {
-    //     let shufleQuest = shuffleArray(this.state.selection);
-    //     this.setState({
-    //         selection: shufleQuest
-    //     })
-    //     console.log(shufleQuest);
-    // }
-
     componentWillUnmount() {
         document.querySelector("nav").style.height = "auto";
     }
 
-    //Set Answers
-    onChoose = async (val, e) => {
-        let data = { id: parseInt(e.target.id), val: val, question: this.state.selection[parseInt(e.target.id) - 1].question, select: options[val].opt };
+    shuffle(arra1) {
+        var ctr = arra1.length,
+            temp,
+            index;
+
+        while (ctr > 0) {
+            index = Math.floor(Math.random() * ctr);
+            ctr--;
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1;
+    }
+
+    onChoose = async (id, x, val) => {
+        console.log(id, x, val);
+        let data = {
+            id: parseInt(id),
+            val: val,
+            question: this.state.selection[x].question,
+            select: options[val].opt,
+        };
+        console.log(data);
         var new_selection = [];
 
         await this.state.selection.map((i, key) => {
-            console.log("i:", i.id + "data:", data.id);
+            if (i.id === data.id) console.log(i);
             i.id == data.id
                 ? new_selection.push(data)
-                : new_selection.push({ id: i.id, val: i.val, question: i.question, select: i.select });
+                : new_selection.push({
+                    id: i.id,
+                    val: i.val,
+                    question: i.question,
+                    select: i.select,
+                });
         });
         await this.setState({ selection: new_selection });
+        console.log(this.state.selection);
     };
 
     //Validate questions
     validate = async () => {
         await this.setState({
             error: 0,
-            msg: ""
-        })
-        this.setState(prevState => {
-            this.state.selection.sort((a, b) => (a.id - b.id))
+            msg: "",
         });
+        var err = 0;
         for (var i = 0; i <= this.state.selection.length - 1; i++) {
             if (this.state.selection[i].val == null) {
-                // console.log(this.state.selection[i].id + " : " + this.state.selection[i].val);
-                // await this.setState({ msg: "" });
-                this.setState({ msg: "Please fill all the questions." });
-                this.setState({ error: this.state.error + 1 });
+                err = err + 1;
             }
         }
-        // console.log(this.state.selection);
-        // console.log("Error: " + this.state.error);
-        if (this.state.error == 0) {
-            axios.post('https://phyerwaal-dev-career.herokuapp.com/submit-data', {
-                data: this.state.selection,
-                user: this.props.user
-            }).then((response) => {
-                // console.log(response.data);
-                // console.log("This :" + this);
-                this.props.storeResponse(response.data);
-                this.props.history.push('/career/results');
-            }).catch(function (error) {
-                //console.log(error);
 
+        if (err > 0)
+            this.setState({
+                error: err,
+                msg: "Please fill all the questions.",
             });
+        console.log("Error: " + this.state.error);
+        if (this.state.error == 0) {
+            axios
+                .post("https://phyerwaal-dev-career.herokuapp.com/submit-data", {
+                    data: this.state.selection.sort(function (a, b) {
+                        return a.id - b.id;
+                    }),
+                })
+                .then((response) => {
+                    this.props.storeResponse(response.data);
+                    this.props.history.push("/career/results");
+                })
+                .catch(function (error) {
+                    console.log(err);
+                });
         }
-    }
+    };
 
     render() {
         const { collapsed } = this.state;
         const navStyle = { marginTop: "2rem" };
         const overlay = (
             <div
-                id="sidenav-overlay"
+                id='sidenav-overlay'
                 style={{ backgroundColor: "white" }}
                 onClick={this.handleTogglerClick}
             />
         );
         return (
-            <div id="questions">
-                <div className="fadeInDown">
+            <div id='questions'>
+                <div className='fadeInDown'>
                     <MDBNavbar
-                        color="secondary-color"
+                        color='secondary-color'
                         style={navStyle}
                         light
-                        expand="md"
+                        expand='md'
                         scrolling
                         transparent
                     >
                         <MDBContainer>
-                            <MDBNavbarBrand href="/career/">
+                            <MDBNavbarBrand href='/career/'>
                                 <strong>APSIT Career</strong>
                             </MDBNavbarBrand>
                             <MDBNavbarToggler onClick={this.handleTogglerClick} />
                             <MDBCollapse isOpen={collapsed} navbar>
                                 <MDBNavbarNav right>
                                     <MDBNavItem>
-                                        <MDBNavLink to="/career/">Home</MDBNavLink>
+                                        <MDBNavLink to='/career/'>Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to="/career/dev">Developers</MDBNavLink>
+                                        <MDBNavLink to='/career/dev'>Developers</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
@@ -175,11 +218,12 @@ class Questions extends React.Component {
                 <MDBView src={logo}>
                     <MDBContainer
                         style={{ height: "100%", width: "100%", paddingTop: "5rem" }}
-                        className="d-flex justify-content-center align-items-center"
+                        className='d-flex justify-content-center align-items-center'
                     >
                         <MDBRow>
                             <h1
-                                className="display-10 font-weight-bold question-header fadeInDown" style={{ animationDelay: ".2s" }}
+                                className='display-10 font-weight-bold question-header fadeInDown'
+                                style={{ animationDelay: ".2s" }}
                             >
                                 QUESTIONS
               </h1>
@@ -187,8 +231,12 @@ class Questions extends React.Component {
                                 {this.state.selection.map((question, index) => {
                                     return (
                                         <div
-                                            className="card fadeInDown"
-                                            style={{ animationDelay: ".4s" }}
+                                            className='card fadeInDown'
+                                            style={
+                                                this.state.current.includes(index)
+                                                    ? { display: "block", animationDelay: ".0s" }
+                                                    : { display: "none", animationDelay: ".0s" }
+                                            }
                                         >
                                             <MDBCardBody>
                                                 <MDBCardTitle>
@@ -196,16 +244,16 @@ class Questions extends React.Component {
                                                 </MDBCardTitle>
                                                 {options.map((opt, oindex) => {
                                                     return (
-                                                        <MDBContainer className="mt-3">
-                                                            <MDBInput key={oindex}
+                                                        <MDBContainer className='mt-3'>
+                                                            <MDBInput
+                                                                key={oindex}
                                                                 required
-                                                                type="radio"
+                                                                type='radio'
                                                                 label={opt.opt}
                                                                 id={question.id}
-                                                                onClick={this.onChoose.bind(
-                                                                    question.id,
-                                                                    opt.val,
-                                                                )}
+                                                                onClick={(e) => {
+                                                                    this.onChoose(e.target.id, index, opt.val);
+                                                                }}
                                                                 checked={
                                                                     this.state.selection[index].val == opt.val
                                                                         ? true
@@ -222,13 +270,42 @@ class Questions extends React.Component {
                                 })}
                             </MDBCard>
                             <div
-                                className="send-btn fadeInDown"
+                                className='send-btn fadeInDown'
                                 style={{ animationDelay: "1s" }}
                             >
-                                <h5 className="error-msg justify-content-center align-items-center">{this.state.msg}</h5>
-                                <MDBBtn color="success" onClick={this.validate}>SEND ANSWER</MDBBtn>
+                                <h5 className='error-msg justify-content-center align-items-center'>
+                                    {this.state.msg}
+                                </h5>
+                                {this.state.current[4] <= 4 ? null : (
+                                    <MDBBtn
+                                        color='success'
+                                        onClick={() => {
+                                            this.setState({
+                                                current: Array.from(this.state.current, (x) => x - 5),
+                                            });
+                                        }}
+                                    >
+                                        prev
+                                    </MDBBtn>
+                                )}
 
-
+                                {this.state.current[4] >= this.state.selection.length - 1 ? (
+                                    <MDBBtn color='success' onClick={this.validate}>
+                                        SEND ANSWER
+                                    </MDBBtn>
+                                ) : (
+                                        <MDBBtn
+                                            color='success'
+                                            onClick={async () => {
+                                                await this.setState({
+                                                    current: Array.from(this.state.current, (x) => x + 5),
+                                                });
+                                                console.log(this.state.current);
+                                            }}
+                                        >
+                                            next
+                                        </MDBBtn>
+                                    )}
                             </div>
                         </MDBRow>
                     </MDBContainer>
@@ -251,3 +328,10 @@ const mapStateToProps = (state) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Questions);
+return {
+    storeResponse: (response) => {
+        dispatch({ type: "RES_SUCCESS", response: response });
+    },
+};
+
+export default connect(null, mapDispatchToProps)(Questions);
