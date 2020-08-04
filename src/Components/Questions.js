@@ -164,6 +164,7 @@ class Questions extends React.Component {
                     data: this.state.selection.sort(function (a, b) {
                         return a.id - b.id;
                     }),
+                    userData: this.props.user
                 })
                 .then((response) => {
                     this.props.storeResponse(response.data);
@@ -334,4 +335,4 @@ return {
     },
 };
 
-export default connect(null, mapDispatchToProps)(Questions);
+export default connect(mapStateToProps, mapDispatchToProps)(Questions);
