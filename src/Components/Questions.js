@@ -322,4 +322,10 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(null, mapDispatchToProps)(Questions);
+const mapStateToProps = (state) => ({
+    user: state.user
+});
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Questions);
