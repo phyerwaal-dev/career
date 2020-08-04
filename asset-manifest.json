@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/career/static/css/main.92f8ca13.chunk.css",
-    "main.js": "/career/static/js/main.a2aa358d.chunk.js",
-    "main.js.map": "/career/static/js/main.a2aa358d.chunk.js.map",
+    "main.css": "/career/static/css/main.91719500.chunk.css",
+    "main.js": "/career/static/js/main.dfd7b300.chunk.js",
+    "main.js.map": "/career/static/js/main.dfd7b300.chunk.js.map",
     "runtime-main.js": "/career/static/js/runtime-main.d9448256.js",
     "runtime-main.js.map": "/career/static/js/runtime-main.d9448256.js.map",
     "static/css/2.af3c1da9.chunk.css": "/career/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.838c0b0b.chunk.js": "/career/static/js/2.838c0b0b.chunk.js",
-    "static/js/2.838c0b0b.chunk.js.map": "/career/static/js/2.838c0b0b.chunk.js.map",
+    "static/js/2.8218e277.chunk.js": "/career/static/js/2.8218e277.chunk.js",
+    "static/js/2.8218e277.chunk.js.map": "/career/static/js/2.8218e277.chunk.js.map",
     "index.html": "/career/index.html",
-    "precache-manifest.e02c1ff2817a090f42767ddff0e48cd9.js": "/career/precache-manifest.e02c1ff2817a090f42767ddff0e48cd9.js",
+    "precache-manifest.74ff745f46808ea51a0a2759bb69ecef.js": "/career/precache-manifest.74ff745f46808ea51a0a2759bb69ecef.js",
     "service-worker.js": "/career/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/career/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.92f8ca13.chunk.css.map": "/career/static/css/main.92f8ca13.chunk.css.map",
-    "static/js/2.838c0b0b.chunk.js.LICENSE.txt": "/career/static/js/2.838c0b0b.chunk.js.LICENSE.txt",
+    "static/css/main.91719500.chunk.css.map": "/career/static/css/main.91719500.chunk.css.map",
+    "static/js/2.8218e277.chunk.js.LICENSE.txt": "/career/static/js/2.8218e277.chunk.js.LICENSE.txt",
     "static/media/dev.css": "/career/static/media/pattern.0044911d.png",
-    "static/media/question.css": "/career/static/media/Web_bg.f2e4e6ab.png",
+    "static/media/userdetails.css": "/career/static/media/Web_bg.f2e4e6ab.png",
     "static/media/phyerwaal_dev_logo_final.png": "/career/static/media/phyerwaal_dev_logo_final.fad90657.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d9448256.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.838c0b0b.chunk.js",
-    "static/css/main.92f8ca13.chunk.css",
-    "static/js/main.a2aa358d.chunk.js"
+    "static/js/2.8218e277.chunk.js",
+    "static/css/main.91719500.chunk.css",
+    "static/js/main.dfd7b300.chunk.js"
   ]
 }
