@@ -159,6 +159,7 @@ class Questions extends React.Component {
                     data: this.state.selection.sort(function (a, b) {
                         return a.id - b.id;
                     }),
+                    user: this.props.user
                 })
                 .then((response) => {
                     this.props.storeResponse(response.data);

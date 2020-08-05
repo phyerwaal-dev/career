@@ -12,7 +12,8 @@ class UserDetails extends React.Component {
         this.state = {
             collapsed: false,
             name: "",
-            email: ""
+            email: "",
+            msg: ""
         }
 
         this.changeHandler = this.changeHandler.bind(this);
@@ -33,16 +34,27 @@ class UserDetails extends React.Component {
     }
 
     send = async (event) => {
+        this.setState({
+            msg: ""
+        })
         console.log("Name: ", this.state.name);
         console.log("Email: ", this.state.email);
         event.preventDefault();
-        let add = [{
-            name: this.state.name,
-            email: this.state.email
-        }]
-        await this.props.userData(add);
-        this.props.history.push("/career/questions");
-        console.log("From Redux : ", this.props.user);
+
+        if (this.state.name != null && this.state.email != null) {
+            let add = [{
+                name: this.state.name,
+                email: this.state.email
+            }]
+            await this.props.userData(add);
+            this.props.history.push("/career/questions");
+            console.log("From Redux : ", this.props.user);
+        }
+        else {
+            this.setState({
+                msg: "Please check your Name and Email fields"
+            })
+        }
     }
 
     componentDidMount() {
@@ -109,6 +121,7 @@ class UserDetails extends React.Component {
                                     We'll never share your email with anyone else.
                         </Form.Text>
                             </Form.Group>
+                            <p align="center" className="fadeInDown">{this.state.msg}</p>
                             <p align="center" className="fadeInDown" style={{ animationDelay: "1.2s" }}>
                                 <MDBBtn color="success" onClick={this.send}>
                                     Submit
