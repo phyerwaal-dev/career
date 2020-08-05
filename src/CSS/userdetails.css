@@ -16,6 +16,10 @@
     color: #00c851;
 }
 
+.errMsg {
+    color: red;
+}
+
 /* Animation */
 
 .fadeInDown {

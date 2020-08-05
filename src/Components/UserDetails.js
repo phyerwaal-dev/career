@@ -1,11 +1,20 @@
-import React from 'react';
-import '../CSS/userdetails.css';
-import { Row, Col, Form } from 'react-bootstrap';
-import { MDBBtn, MDBNavItem, MDBContainer, MDBNavbarBrand, MDBNavbarToggler, MDBNavbar, MDBNavLink, MDBCollapse, MDBNavbarNav } from 'mdbreact';
-import { connect } from 'react-redux';
+import React from "react";
+import "../CSS/userdetails.css";
+import { Row, Col, Form } from "react-bootstrap";
+import {
+    MDBBtn,
+    MDBNavItem,
+    MDBContainer,
+    MDBNavbarBrand,
+    MDBNavbarToggler,
+    MDBNavbar,
+    MDBNavLink,
+    MDBCollapse,
+    MDBNavbarNav,
+} from "mdbreact";
+import { connect } from "react-redux";
 
 class UserDetails extends React.Component {
-
     constructor(props) {
         super(props);
 
@@ -13,8 +22,8 @@ class UserDetails extends React.Component {
             collapsed: false,
             name: "",
             email: "",
-            msg: ""
-        }
+            err: ""
+        };
 
         this.changeHandler = this.changeHandler.bind(this);
         this.send = this.send.bind(this);
@@ -29,33 +38,35 @@ class UserDetails extends React.Component {
 
     changeHandler = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
+            [event.target.name]: event.target.value,
+        });
+    };
 
     send = async (event) => {
         this.setState({
-            msg: ""
+            err: ""
         })
         console.log("Name: ", this.state.name);
         console.log("Email: ", this.state.email);
         event.preventDefault();
 
-        if (this.state.name != null && this.state.email != null) {
-            let add = [{
-                name: this.state.name,
-                email: this.state.email
-            }]
+        if (this.state.name != "" && this.state.email != "") {
+            let add = [
+                {
+                    name: this.state.name,
+                    email: this.state.email,
+                },
+            ];
             await this.props.userData(add);
-            this.props.history.push("/career/questions");
+            this.props.history.push("/questions");
             console.log("From Redux : ", this.props.user);
         }
         else {
             this.setState({
-                msg: "Please check your Name and Email fields"
+                err: "Please check Name and Email fields"
             })
         }
-    }
+    };
 
     componentDidMount() {
         document.querySelector("nav").style.height = "65px";
@@ -70,7 +81,7 @@ class UserDetails extends React.Component {
         const navStyle = { marginTop: "2rem" };
         const overlay = (
             <div
-                id="sidenav-overlay"
+                id='sidenav-overlay'
                 style={{ backgroundColor: "white" }}
                 onClick={this.handleTogglerClick}
             />
@@ -78,27 +89,27 @@ class UserDetails extends React.Component {
 
         return (
             <section id='userDetails'>
-                <div className="fadeInDown">
+                <div className='fadeInDown'>
                     <MDBNavbar
-                        color="secondary-color"
+                        color='secondary-color'
                         style={navStyle}
                         light
-                        expand="md"
+                        expand='md'
                         scrolling
                         transparent
                     >
                         <MDBContainer>
-                            <MDBNavbarBrand href="/career/">
+                            <MDBNavbarBrand href='/'>
                                 <strong>APSIT Career</strong>
                             </MDBNavbarBrand>
                             <MDBNavbarToggler onClick={this.handleTogglerClick} />
                             <MDBCollapse isOpen={collapsed} navbar>
                                 <MDBNavbarNav right>
                                     <MDBNavItem>
-                                        <MDBNavLink to="/career/">Home</MDBNavLink>
+                                        <MDBNavLink to='/'>Home</MDBNavLink>
                                     </MDBNavItem>
                                     <MDBNavItem>
-                                        <MDBNavLink to="/career/dev">Developers</MDBNavLink>
+                                        <MDBNavLink to='/dev'>Developers</MDBNavLink>
                                     </MDBNavItem>
                                 </MDBNavbarNav>
                             </MDBCollapse>
@@ -106,31 +117,78 @@ class UserDetails extends React.Component {
                     </MDBNavbar>
                     {collapsed && overlay}
                 </div>
-                <h3 className="header-title fadeInDown" align="center">Send your details to improve our service</h3>
-                <Row xs={12} md={3} className="justify-content-center align-items-center">
+                <h3 className='header-title fadeInDown' align='center'>
+                    Send your details to improve our service
+                </h3>
+                <Row
+                    xs={12}
+                    md={3}
+                    className='justify-content-center align-items-center'
+                >
                     <Col>
-                        <Form.Group controlId="formBasicName">
-                            <Form.Label className="fadeInDown" style={{ animationDelay: "0.2s" }}>Full Name</Form.Label>
-                            <Form.Control className="fadeInDown" style={{ animationDelay: "0.4s" }} type="text" placeholder="Full Name" onChange={this.changeHandler} name="name" />
+                        <Form.Group controlId='formBasicName'>
+                            <Form.Label
+                                className='fadeInDown'
+                                style={{ animationDelay: "0.2s" }}
+                            >
+                                Full Name
+                        </Form.Label>
+                            <Form.Control
+                                className='fadeInDown'
+                                style={{ animationDelay: "0.4s" }}
+                                type='text'
+                                placeholder='Full Name'
+                                onChange={this.changeHandler}
+                                name='name'
+                            />
                         </Form.Group>
-                        <Form className="login-form">
-                            <Form.Group controlId="formBasicEmail" style={{ animationDelay: "0.6s" }}>
-                                <Form.Label className="fadeInDown" style={{ animationDelay: "0.6s" }}>Email address</Form.Label>
-                                <Form.Control className="fadeInDown" style={{ animationDelay: "0.6s" }} type="email" placeholder="Enter Email" onChange={this.changeHandler} name="email" />
-                                <Form.Text className="text-muted fadeInDown" style={{ animationDelay: "0.8s" }}>
+                        <Form className='login-form'>
+                            <Form.Group
+                                controlId='formBasicEmail'
+                                style={{ animationDelay: "0.6s" }}
+                            >
+                                <Form.Label
+                                    className='fadeInDown'
+                                    style={{ animationDelay: "0.6s" }}
+                                >
+                                    Email address
+                        </Form.Label>
+                                <Form.Control
+                                    className='fadeInDown'
+                                    style={{ animationDelay: "0.6s" }}
+                                    type='email'
+                                    placeholder='Enter Email'
+                                    onChange={this.changeHandler}
+                                    name='email'
+                                />
+                                <Form.Text
+                                    className='text-muted fadeInDown'
+                                    style={{ animationDelay: "0.8s" }}
+                                >
                                     We'll never share your email with anyone else.
-                        </Form.Text>
+                                </Form.Text>
                             </Form.Group>
-                            <p align="center" className="fadeInDown">{this.state.msg}</p>
-                            <p align="center" className="fadeInDown" style={{ animationDelay: "1.2s" }}>
-                                <MDBBtn color="success" onClick={this.send}>
+                            <p align="center" className="errMsg">{this.state.err}</p>
+                            <p
+                                align='center'
+                                className='fadeInDown'
+                                style={{ animationDelay: "1.2s" }}
+                            >
+                                <MDBBtn color='success' onClick={this.send}>
                                     Submit
                                 </MDBBtn>
                             </p>
                         </Form>
                     </Col>
                 </Row>
-                <p align="center" className="fadeInDown" style={{ animationDelay: "1.4s" }}>This is an OpenSource project made to help students find their perfect Engg branch and we need your help to improve our model.</p >
+                <p
+                    align='center'
+                    className='fadeInDown'
+                    style={{ animationDelay: "1.4s" }}
+                >
+                    This is an OpenSource project made to help students find their perfect
+                    Engg branch and we need your help to improve our model.
+        </p>
             </section>
         );
     }
@@ -138,14 +196,14 @@ class UserDetails extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        userData: (user) => { dispatch({ type: 'USER_DATA', user: user }) },
-    }
-}
+        userData: (user) => {
+            dispatch({ type: "USER_DATA", user: user });
+        },
+    };
+};
 
 const mapStateToProps = (state) => ({
-    user: state.user
+    user: state.user,
 });
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDetails);
