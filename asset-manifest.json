@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/career/static/css/main.91719500.chunk.css",
-    "main.js": "/career/static/js/main.dfd7b300.chunk.js",
-    "main.js.map": "/career/static/js/main.dfd7b300.chunk.js.map",
-    "runtime-main.js": "/career/static/js/runtime-main.d9448256.js",
-    "runtime-main.js.map": "/career/static/js/runtime-main.d9448256.js.map",
-    "static/css/2.af3c1da9.chunk.css": "/career/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.8218e277.chunk.js": "/career/static/js/2.8218e277.chunk.js",
-    "static/js/2.8218e277.chunk.js.map": "/career/static/js/2.8218e277.chunk.js.map",
-    "index.html": "/career/index.html",
-    "precache-manifest.74ff745f46808ea51a0a2759bb69ecef.js": "/career/precache-manifest.74ff745f46808ea51a0a2759bb69ecef.js",
-    "service-worker.js": "/career/service-worker.js",
-    "static/css/2.af3c1da9.chunk.css.map": "/career/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.91719500.chunk.css.map": "/career/static/css/main.91719500.chunk.css.map",
-    "static/js/2.8218e277.chunk.js.LICENSE.txt": "/career/static/js/2.8218e277.chunk.js.LICENSE.txt",
-    "static/media/dev.css": "/career/static/media/pattern.0044911d.png",
-    "static/media/userdetails.css": "/career/static/media/Web_bg.f2e4e6ab.png",
-    "static/media/phyerwaal_dev_logo_final.png": "/career/static/media/phyerwaal_dev_logo_final.fad90657.png"
+    "main.css": "/static/css/main.5ee0d30d.chunk.css",
+    "main.js": "/static/js/main.0809f04b.chunk.js",
+    "main.js.map": "/static/js/main.0809f04b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.266c4fb3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.266c4fb3.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.8218e277.chunk.js": "/static/js/2.8218e277.chunk.js",
+    "static/js/2.8218e277.chunk.js.map": "/static/js/2.8218e277.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.45034770ba8634c2c03353d85cdcd3b5.js": "/precache-manifest.45034770ba8634c2c03353d85cdcd3b5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.5ee0d30d.chunk.css.map": "/static/css/main.5ee0d30d.chunk.css.map",
+    "static/js/2.8218e277.chunk.js.LICENSE.txt": "/static/js/2.8218e277.chunk.js.LICENSE.txt",
+    "static/media/dev.css": "/static/media/pattern.0044911d.png",
+    "static/media/userdetails.css": "/static/media/Web_bg.f2e4e6ab.png",
+    "static/media/phyerwaal_dev_logo_final.png": "/static/media/phyerwaal_dev_logo_final.fad90657.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d9448256.js",
+    "static/js/runtime-main.266c4fb3.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.8218e277.chunk.js",
-    "static/css/main.91719500.chunk.css",
-    "static/js/main.dfd7b300.chunk.js"
+    "static/css/main.5ee0d30d.chunk.css",
+    "static/js/main.0809f04b.chunk.js"
   ]
 }
