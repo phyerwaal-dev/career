@@ -24,6 +24,9 @@ export default function Developers() {
                     <Col sm={12} md={3}>
                         <h1 className="name">Aseem Godambe</h1>
                     </Col>
+        <Col sm={12} md={3}>
+                        <h1 className="name">Shreyas Chorge</h1>
+                    </Col>
                 </Row>
             </div>
         </section>
