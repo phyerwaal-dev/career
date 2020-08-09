@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Redirect } from 'react-router-dom';
 import {
   MDBBtn,
   MDBCard,
@@ -20,7 +20,7 @@ import {
 } from "mdbreact";
 import axios from "axios";
 import "../question.css";
-import questions from "../data/questions.json";
+import questions from "../data/updated_Questions.json";
 import options from "../data/options.json";
 import logo from "../Web_bg.png";
 import { connect } from "react-redux";
@@ -60,13 +60,13 @@ class Questions extends React.Component {
     this.setState({ selection: xxx });
   }
 
-  componentDidMount() {
-    document.querySelector("nav").style.height = "65px";
-  }
+  // componentDidMount() {
+  //   document.querySelector("nav").style.height = "65px";
+  // }
 
-  componentWillUnmount() {
-    document.querySelector("nav").style.height = "auto";
-  }
+  // componentWillUnmount() {
+  //   document.querySelector("nav").style.height = "auto";
+  // }
 
   shuffle(arra1) {
     var ctr = arra1.length,
@@ -138,6 +138,7 @@ class Questions extends React.Component {
     await this.nextValidate();
     console.log("Error: " + this.state.error);
     if (this.state.error == 0) {
+      this.props.storeUserSelection(this.state.selection);
       axios
         .post("https://phyerwaal-dev-career.herokuapp.com/submit-data", {
           data: this.state.selection.sort(function (a, b) {
@@ -164,7 +165,7 @@ class Questions extends React.Component {
         onClick={this.handleTogglerClick}
       />
     );
-    return (
+    return this.props.hasFilledDetails ? (
       <div id='questions'>
         <div className='fadeInDown'>
           <MDBNavbar
@@ -293,7 +294,7 @@ class Questions extends React.Component {
           </MDBContainer>
         </MDBView>
       </div>
-    );
+    ) : (<Redirect to='/add_details' />);
   }
 }
 
@@ -303,11 +304,15 @@ const mapDispatchToProps = (dispatch) => {
     storeResponse: (response) => {
       dispatch({ type: "RES_SUCCESS", response: response });
     },
+    storeUserSelection: (selection) => {
+      dispatch({ type: "USER_SELECTION", selection: selection })
+    }
   };
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  hasFilledDetails: state.hasFilledDetails
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Questions);

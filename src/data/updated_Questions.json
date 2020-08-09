@@ -1,0 +1,202 @@
+[
+  {
+    "id": "1",
+    "question": "Would you make the banking system automated to make transactions easy?"
+  },
+  {
+    "id": "2",
+    "question": "Are you fascinated to develop a gaming software/engine?"
+  },
+  {
+    "id": "3",
+    "question": "Would you like to know how the internet works and also want to build your own website?"
+  },
+  {
+    "id": "4",
+    "question": "Have you ever thought of developing, loading and managing computer software(s) over a large computer network?"
+  },
+  {
+    "id": "5",
+    "question": "Compute and record statistical and other numerical data,to find out a suitable solution"
+  },
+  {
+    "id": "6",
+    "question": "Would you like to maintain/develop cloud infrastructure like AWS(Amazon web services), GCP(Google Cloud Platform)?"
+  },
+  {
+    "id": "7",
+    "question": "Are you fascinated to build an  operating system like Windows, MacOS, Android, iOS_ or to learn how these OS work?"
+  },
+  {
+    "id": "8",
+    "question": "Build motherboards for various systems"
+  },
+  {
+    "id": "9",
+    "question": "Would you like to write a computer program to Identify objects from images using various algorithms of machine learning?"
+  },
+  {
+    "id": "10",
+    "question": "Do you like to develop a computer software by writing computer program(s) for the same?"
+  },
+  {
+    "id": "11",
+    "question": "Are you interested in developing satellite communication systems?"
+  },
+  {
+    "id": "12",
+    "question": "Would you design electronic control systems for vehicles, airplanes, ships, rockets?"
+  },
+  {
+    "id": "13",
+    "question": "Are you interested in learning about circuit boards, processors, chips, electronic system design."
+  },
+  {
+    "id": "14",
+    "question": "Do you like designing robotic-control units?"
+  },
+  {
+    "id": "15",
+    "question": "Are you interested to know how electronic home automation systems work?"
+  },
+  {
+    "id": "16",
+    "question": "have you ever tried to understand how the mobile and other telecommunication devices work?"
+  },
+  {
+    "id": "17",
+    "question": "Would you develop power supply tools and equipments?"
+  },
+  {
+    "id": "18",
+    "question": "Are you interested in making a self driving car, Build robotic parts?"
+  },
+  {
+    "id": "19",
+    "question": "Would you repair/create machines, create a mechanism to reduce water pollution from industries?"
+  },
+  {
+    "id": "20",
+    "question": "Assemble/build Products in a manufacturing unit"
+  },
+  {
+    "id": "21",
+    "question": "Are you fascinated to create an exoskeleton to increase strength (like iron man)?"
+  },
+  {
+    "id": "22",
+    "question": "Have you ever thought of building a  remote controlled plane/quadcopter/car?"
+  },
+  {
+    "id": "23",
+    "question": "Are you fascinated about building rocket engines for interstellar travel like elon musk?"
+  },
+  {
+    "id": "24",
+    "question": "Would you develop machinery to make tasks easier, or automate them?"
+  },
+  {
+    "id": "25",
+    "question": "Can you visualize plans for an open space?(E.g. being able to imagine how a room will look if the furniture is rearranged)"
+  },
+  {
+    "id": "26",
+    "question": "Do you sometimes try to visualize architectural structure by looking at any building/bridges/roads etc."
+  },
+  {
+    "id": "27",
+    "question": "Do you like to find efficient plans/methods for water management and conservation, finding better water irrigation methods?"
+  },
+  {
+    "id": "28",
+    "question": "Do you often try to find ways to keep development in process with least deforestation?"
+  },
+  {
+    "id": "29",
+    "question": "Do you like to research a new ways for making roads more durable"
+  },
+  {
+    "id": "30",
+    "question": "Do you like to study about materials, methods, and the tools involved in the construction or repair of houses, buildings, or other structures such as highways and roads?"
+  },
+  {
+    "id": "31",
+    "question": "Do like to gain  knowledge of design techniques, tools, and principles involved in production of precision technical plans, blueprints, drawings, and models?"
+  },
+  {
+    "id": "32",
+    "question": "Develop a way to better predict the weather with some technology."
+  },
+  {
+    "id": "33",
+    "question": "Would you like to enter information into a computer database?"
+  },
+  {
+    "id": "34",
+    "question": "Do you like writing computer programs for various purposes?"
+  },
+  {
+    "id": "35",
+    "question": "Want to hack/breach into a computer system(s)?"
+  },
+  {
+    "id": "36",
+    "question": "Do you like solving complex math problems?"
+  },
+  {
+    "id": "37",
+    "question": "Are you fascinated about computer processors and GPUs?"
+  },
+  {
+    "id": "38",
+    "question": "Do you try to solve an application error or computer booting error by yourself?"
+  },
+  {
+    "id": "39",
+    "question": "Are you interested to know the working of virtual assistant (like google assistant/Alexa)?"
+  },
+  {
+    "id": "40",
+    "question": "Would you like to work on a new computer operating system?"
+  },
+  {
+    "id": "41",
+    "question": "To Develop a machine learning algorithm. What do you think about it?"
+  },
+  {
+    "id": "42",
+    "question": "Are you interested in developing a machine learning algorithm?"
+  },
+  {
+    "id": "43",
+    "question": "Have you ever thought of designing electronic control systems for electric vehicles?"
+  },
+  {
+    "id": "44",
+    "question": "Would you design an automated home lighting system for your own house?"
+  },
+  {
+    "id": "45",
+    "question": "Would you like to study about  machines and tools, including their designs, uses, repair and maintenance?"
+  },
+  {
+    "id": "46",
+    "question": "Do you like to work on installing machines, wirings and other heavy equipments to meet specifications?"
+  },
+  {
+    "id": "47",
+    "question": "Do you like designing and building sports cars chassis, engines etc?"
+  },
+  {
+    "id": "48",
+    "question": "Do you very often think about the ideas to provide better water quality/supply to the villages where there is shortage of water?"
+  },
+  {
+    "id": "49",
+    "question": "Do you try to find the materials used to develop a road/bridge/railway-track?"
+  },
+  {
+    "id": "50",
+    "question": "Do you often try to find better water irrigation methods?"
+  }
+]	

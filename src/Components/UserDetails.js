@@ -22,6 +22,7 @@ class UserDetails extends React.Component {
             collapsed: false,
             name: "",
             email: "",
+            phone: "",
             err: ""
         };
 
@@ -50,13 +51,16 @@ class UserDetails extends React.Component {
         console.log("Email: ", this.state.email);
         event.preventDefault();
 
-        if (this.state.name != "" && this.state.email != "") {
+        if (this.state.name != "" && this.state.email != "" && this.state.email.includes('@') && this.state.email.includes('.com') && this.state.phone.length === 10 || this.state.phone !== null) {
             let add = [
                 {
                     name: this.state.name,
                     email: this.state.email,
+                    phone: this.state.phone
                 },
             ];
+            localStorage.setItem('name', this.state.name);
+            localStorage.setItem('email', this.state.email);
             await this.props.userData(add);
             this.props.history.push("/questions");
             console.log("From Redux : ", this.props.user);
@@ -64,6 +68,12 @@ class UserDetails extends React.Component {
         else {
             this.setState({
                 err: "Please check Name and Email fields"
+            })
+        }
+
+        if (this.state.phone.length !== 10) {
+            this.setState({
+                err: "Check phone number"
             })
         }
     };
@@ -117,6 +127,7 @@ class UserDetails extends React.Component {
                     </MDBNavbar>
                     {collapsed && overlay}
                 </div>
+                <p className="warning fadeInDown" align="center">Warning: Please do not reload throughout the test!</p>
                 <h3 className='header-title fadeInDown' align='center'>
                     Send your details to improve our service
                 </h3>
@@ -126,23 +137,23 @@ class UserDetails extends React.Component {
                     className='justify-content-center align-items-center'
                 >
                     <Col>
-                        <Form.Group controlId='formBasicName'>
-                            <Form.Label
-                                className='fadeInDown'
-                                style={{ animationDelay: "0.2s" }}
-                            >
-                                Full Name
-                        </Form.Label>
-                            <Form.Control
-                                className='fadeInDown'
-                                style={{ animationDelay: "0.4s" }}
-                                type='text'
-                                placeholder='Full Name'
-                                onChange={this.changeHandler}
-                                name='name'
-                            />
-                        </Form.Group>
                         <Form className='login-form'>
+                            <Form.Group controlId='formBasicName'>
+                                <Form.Label
+                                    className='fadeInDown'
+                                    style={{ animationDelay: "0.2s" }}
+                                >
+                                    Full Name
+                        </Form.Label>
+                                <Form.Control
+                                    className='fadeInDown'
+                                    style={{ animationDelay: "0.4s" }}
+                                    type='text'
+                                    placeholder='Full Name'
+                                    onChange={this.changeHandler}
+                                    name='name'
+                                />
+                            </Form.Group>
                             <Form.Group
                                 controlId='formBasicEmail'
                                 style={{ animationDelay: "0.6s" }}
@@ -168,13 +179,33 @@ class UserDetails extends React.Component {
                                     We'll never share your email with anyone else.
                                 </Form.Text>
                             </Form.Group>
+                            <Form.Group
+                                controlId='formBasicEmail'
+                                style={{ animationDelay: "0.6s" }}
+                            >
+                                <Form.Label
+                                    className='fadeInDown'
+                                    style={{ animationDelay: "0.6s" }}
+                                >
+                                    Phone Number
+                        </Form.Label>
+                                <Form.Control
+                                    className='fadeInDown'
+                                    style={{ animationDelay: "0.8s" }}
+                                    type='number'
+                                    placeholder='Phone Number'
+                                    onChange={this.changeHandler}
+                                    name='phone'
+                                    maxLength="10"
+                                />
+                            </Form.Group>
                             <p align="center" className="errMsg">{this.state.err}</p>
                             <p
                                 align='center'
                                 className='fadeInDown'
                                 style={{ animationDelay: "1.2s" }}
                             >
-                                <MDBBtn color='success' onClick={this.send}>
+                                <MDBBtn color='success' type="submit" onClick={this.send}>
                                     Submit
                                 </MDBBtn>
                             </p>

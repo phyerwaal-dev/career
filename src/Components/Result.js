@@ -4,11 +4,12 @@ import { Col } from "reactstrap";
 import { connect } from "react-redux";
 import "../CSS/results.css";
 import { MDBLink, MDBBtn } from "mdbreact";
+import { Redirect } from 'react-router-dom';
 
-const Result = ({ options, series }) => {
-  const [result, setResult] = useState();
+const Result = ({ options, series, hasFilledAll }) => {
+  // const [result, setResult] = useState();
   // console.log(options);
-  return (
+  return hasFilledAll ? (
     <div className='app' align='center'>
       <Col className='justify-content-center align-items-center'>
         <h1 className='header-title'>Results</h1>
@@ -29,13 +30,14 @@ const Result = ({ options, series }) => {
         </MDBLink>
       </Col>
     </div>
-  );
+  ) : (<Redirect to='/questions' />);
 };
 
 const mapStateToProps = (state) => ({
   // res: state.res,
   options: state.options,
   series: state.series,
+  hasFilledAll: state.hasFilledAll
 });
 
 export default connect(mapStateToProps)(Result);
