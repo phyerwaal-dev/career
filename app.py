@@ -8,6 +8,7 @@ from pandas.io.json import json_normalize
 import pandas as pd
 import numpy as np
 from statistics import mode
+import pymongo
 app = Flask(__name__)
 CORS(app)
 
@@ -119,6 +120,40 @@ def submit():
             "branch": mode(br),
             "cluster": cluster,
             "probabilities": probs
+        }), 200
+    except Exception as e:
+        return jsonify({
+            "error": e
+        }), 400
+
+
+@app.route("/save-data", methods=["POST"])
+def save_data():
+    try:
+        val = request.json
+        myclient = pymongo.MongoClient("")
+        mydb = myclient['career']
+        mycol = mydb["data"]
+        mycol.insert_one(val)
+        return jsonify({
+            "message": "data saved for future models"
+        }), 200
+    except Exception as e:
+        return jsonify({
+            "error": e
+        }), 400
+
+
+@app.route("/save-info", methods=["POST"])
+def save_data():
+    try:
+        val = request.json
+        myclient = pymongo.MongoClient("")
+        mydb = myclient['career']
+        mycol = mydb["info"]
+        mycol.insert_one(val)
+        return jsonify({
+            "message": "info saved"
         }), 200
     except Exception as e:
         return jsonify({
